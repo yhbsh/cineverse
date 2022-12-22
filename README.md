@@ -46,7 +46,7 @@
 
 ## Screenshots
 
-<img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.29.47.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.29.52.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.30.00.png" width="200" height="400">
+<img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.29.47.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.29.52.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.30.00.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.30.13.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.30.21.png" width="200" height="400"> <img src="./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.30.32.png" width="200" height="400">
 
 ![Screenshot_2021-09-03-23-02-05-01_0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e](./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.29.47.png)
 ![Screenshot_2021-09-03-23-02-05-01_0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e](./screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20Max%20-%202022-12-22%20at%2008.29.52.png)
