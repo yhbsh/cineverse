@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../../../core/presentation/resource/app_route_const.dart';
+import '../../constant/movies_enum.dart';
+
+class MoviesTypeRow extends HookConsumerWidget {
+  const MoviesTypeRow({Key? key, required this.type}) : super(key: key);
+
+  final MoviesType type;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final size = MediaQuery.of(context).size;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            type.name,
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.2),
+          ),
+          TextButton(
+            onPressed: () => GoRouter.of(context).goNamed(AppRouteName.allMovies, params: {'type': type.name}, extra: const Offset(.5, .5)),
+            child: const Text(
+              'See All',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.2),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
