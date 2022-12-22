@@ -29,17 +29,17 @@
 ## Features
 
 - 1. Search for Movies
-     -- Search for movies by title
-     -- View movie details
-     -- View movie date, rating, and runtime, etc.
-     -- View movie backdrop image, poster image
+     - Search for movies by title
+     - View movie details
+     - View movie date, rating, and runtime, etc.
+     - View movie backdrop image, poster image
 - 2. Favorite movies
-     -- View favorite movies
-     -- Add a movie to favorites
-     -- Remove a movie from favorites
+     - View favorite movies
+     - Add a movie to favorites
+     - Remove a movie from favorites
 - 3. Categorization
-     -- View movies by category (popular, top rated, upcoming, now playing, etc.)
-     -- View movies by genre (action, adventure, comedy, or all genres)
+     - View movies by category (popular, top rated, upcoming, now playing, etc.)
+     - View movies by genre (action, adventure, comedy, or all genres)
 
 ## Dependencies (for developers)
 
