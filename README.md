@@ -39,7 +39,7 @@
      - Remove a movie from favorites
 - 3. Categorization
      - View movies by category (popular, top rated, upcoming, now playing, etc.)
-     - View movies by genre (action, adventure, comedy, or all genres)
+     - View movies by genre (all genres, action, adventure, comedy, etc...)
 
 ## Dependencies (for developers)
 
