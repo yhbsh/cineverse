@@ -15,16 +15,16 @@
 
 - The app is built for Android, iOS, Macos, Windows, Linux, Web.
 - 1. Android
-     -- Make sure you add this line to the AndroidManifest.xml file
-     --`<uses-permission android:name="android.permission.INTERNET" />`
+     - Make sure you add this line to the AndroidManifest.xml file
+       `<uses-permission android:name="android.permission.INTERNET" />`
 - 2. Macos
-     -- Make sure you add this line to the Info.plist file (in the Runner folder)
-     --`<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
-     -- Make sure you add this line to the Release.entitlements file (in the Runner folder)
-     --`<key> com.apple.security.network.client </key> <true/>`
+     - Make sure you add this line to the Info.plist file (in the Runner folder)
+       `<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
+     - Make sure you add this line to the Release.entitlements file (in the Runner folder)
+       `<key> com.apple.security.network.client </key> <true/>`
 - 3. IOS
-     -- Make sure internet permission is enabled in the Info.plist file (in the Runner folder)
-     --`<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
+     - Make sure internet permission is enabled in the Info.plist file (in the Runner folder)
+       `<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
 
 ## Features
 
