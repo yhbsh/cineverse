@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../core/presentation/widget/circular_indicator.dart';
 import '../../../../favorite/presentation/widget/favorite_movie_card.dart';
 import '../../provider/future/fetch_movie_details.dart';
 import '../../provider/future/fetch_search_movies.dart';
@@ -17,7 +18,7 @@ class SearchMoviesListView extends HookConsumerWidget {
     return Expanded(
       child: searchMoviesAsyncValue.when(
         error: (error, stack) => Container(padding: const EdgeInsets.all(16), child: Text('$error')),
-        loading: () => const CircularProgressIndicator.adaptive(),
+        loading: () => const CircularIndicator(),
         data: (moviesEntity) {
           totalResultsNotifier.value = moviesEntity.totalResults;
           return ListView.custom(

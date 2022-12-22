@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:movies_app_okoul/core/presentation/resource/app_color.dart';
 
 import '../../../../core/presentation/provider/stream/network_provider.dart';
+import '../../../../core/presentation/widget/circular_indicator.dart';
 import '../provider/future/fetch_backdrop_image.dart';
 import '../provider/future/fetch_movie_details.dart';
 import '../widget/details/add_rating_button.dart';
@@ -23,7 +25,7 @@ class MovieDetailsView extends HookConsumerWidget {
 
     return movieDetailsAsyncValue.when(
       error: (error, stack) => Text('$error $stack'),
-      loading: () => const Center(child: CircularProgressIndicator.adaptive()),
+      loading: () => const Center(child: CircularIndicator()),
       data: (movieDetails) {
         final backdropAsyncValue = ref.watch(fetchBackdropImageProvider(backdropPath: movieDetails.backdropPath));
         final posterAsyncValue = ref.watch(fetchBackdropImageProvider(backdropPath: movieDetails.posterPath));
@@ -37,7 +39,7 @@ class MovieDetailsView extends HookConsumerWidget {
               if (!isConnected) return const Center(child: Text('No Internet Connection'));
 
               return backdropAsyncValue.when(
-                loading: () => const Center(child: CircularProgressIndicator.adaptive()),
+                loading: () => const Center(child: CircularIndicator()),
                 error: (error, stackTrace) => const SizedBox.shrink(),
                 data: (backdrop) {
                   return SingleChildScrollView(
@@ -57,10 +59,18 @@ class MovieDetailsView extends HookConsumerWidget {
                               Positioned(
                                 bottom: 0,
                                 left: size.width * 0.1,
-                                child: posterAsyncValue.when(
-                                  error: (error, stack) => const SizedBox.shrink(),
-                                  loading: () => const CircularProgressIndicator.adaptive(),
-                                  data: (posterImageData) => MoviePosterImage(poster: posterImageData),
+                                width: size.height * 0.2 * 0.66,
+                                height: size.height * 0.2,
+                                child: DecoratedBox(
+                                  decoration: const BoxDecoration(
+                                    color: AppColor.appBarBackground,
+                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: posterAsyncValue.when(
+                                    error: (error, stack) => const SizedBox.shrink(),
+                                    loading: () => const CircularIndicator(),
+                                    data: (posterImageData) => MoviePosterImage(poster: posterImageData),
+                                  ),
                                 ),
                               ),
                               Positioned(

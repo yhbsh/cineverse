@@ -10,13 +10,9 @@ class MoviePosterImage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * 0.2,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(size.width * 0.02)),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(size.width * 0.02),
-        child: Image.memory(poster, fit: BoxFit.cover, filterQuality: FilterQuality.high),
-      ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(size.width * 0.02),
+      child: Image.memory(poster, fit: BoxFit.cover, filterQuality: FilterQuality.high),
     );
   }
 }

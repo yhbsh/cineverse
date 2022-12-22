@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../core/presentation/widget/circular_indicator.dart';
 import '../provider/notifier/favorite_movies_notifier.dart';
 import 'favorite_movie_card.dart';
 
@@ -13,7 +14,7 @@ class FavoriteMoviesListView extends HookConsumerWidget {
     return Expanded(
       child: favoriteMoviesAsyncValue.when(
         error: (error, stack) => Text('$error $stack'),
-        loading: () => const CircularProgressIndicator.adaptive(),
+        loading: () => const CircularIndicator(),
         data: (favoriteMovies) {
           if (favoriteMovies.isEmpty) return const Center(child: Text('No favorite movies', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold)));
 

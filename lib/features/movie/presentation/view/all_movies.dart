@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/presentation/provider/stream/network_provider.dart';
+import '../../../../core/presentation/widget/circular_indicator.dart';
 import '../constant/movies_enum.dart';
 import '../provider/future/fetch_movies.dart';
 import '../provider/notifier/movie_genre_notifier.dart';
@@ -29,7 +30,7 @@ class AllMoviesView extends HookConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(type.name), centerTitle: true, elevation: 0),
       body: isConnectedAsyncValue.maybeWhen(
-        orElse: () => const CircularProgressIndicator.adaptive(),
+        orElse: () => const CircularIndicator(),
         data: (isConnected) {
           if (!isConnected) return const Center(child: Text('No internet connection'));
           return moviesAsyncValue.maybeWhen(

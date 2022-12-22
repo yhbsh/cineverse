@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/presentation/provider/stream/network_provider.dart';
+import '../../../../core/presentation/widget/circular_indicator.dart';
 import '../constant/movies_enum.dart';
 import '../provider/state/query_provider.dart';
 import '../widget/carousel/top_rated_carousel.dart';
@@ -27,7 +28,7 @@ class MoviesView extends HookConsumerWidget {
       body: SizedBox(
         width: double.infinity,
         child: isConnectedAsyncValue.maybeWhen(
-          orElse: () => const CircularProgressIndicator.adaptive(),
+          orElse: () => const CircularIndicator(),
           data: (isConnected) {
             if (!isConnected) return const Center(child: Text('No internet connection'));
             return _contentView(ref);

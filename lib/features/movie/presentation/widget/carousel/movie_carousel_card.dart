@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../core/presentation/widget/circular_indicator.dart';
 import '../../../domain/entity/movies_entity.dart';
 import '../../provider/future/fetch_backdrop_image.dart';
 import 'movie_carousel_backdrop_image.dart';
@@ -19,7 +20,7 @@ class MovieCarouselCard extends HookConsumerWidget {
     final backdropAsyncValue = ref.watch(fetchBackdropImageProvider(backdropPath: movie.backdropPath));
     return backdropAsyncValue.when(
       error: (error, stack) => Text('$error $stack'),
-      loading: () => const CircularProgressIndicator.adaptive(),
+      loading: () => const CircularIndicator(),
       data: (backdrop) {
         return Stack(
           children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../core/presentation/widget/circular_indicator.dart';
 import '../../../../favorite/presentation/provider/notifier/favorite_movies_notifier.dart';
 import '../../../domain/entity/movie_details_entity.dart';
 
@@ -17,7 +18,7 @@ class MovieDetailsAppBar extends HookConsumerWidget with PreferredSizeWidget {
       actions: [
         favoriteMoviesAsyncValue.when(
           error: (error, stack) => Text('$error $stack'),
-          loading: () => const CircularProgressIndicator.adaptive(),
+          loading: () => const CircularIndicator(),
           data: (favoriteMovies) {
             final isFavorite = favoriteMovies.any((movie) => movie.id == movieDetails.id);
             return IconButton(
