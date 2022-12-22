@@ -3,11 +3,28 @@
 ## Installation
 
 - Clone the repo
+- Make Sure you have Flutter installed
+- Run `flutter create --platforms=android` or any other platform you want to build for
 - Run `flutter pub get`
 - Run `flutter run`
 - It is recommended to use the `--release` flag when building for production and to run it on a real device or on desktop for better experience.
 - Build the app for your platform (Android, iOS, Macos, Windows, Linux, Web, etc.)
 - Enjoy!
+
+## Platform Specifics
+
+- The app is built for Android, iOS, Macos, Windows, Linux, Web.
+- 1. Android:
+     -- Make sure you add this line to the AndroidManifest.xml file:
+     --`<uses-permission android:name="android.permission.INTERNET" />`
+- 2. Macos:
+     -- Make sure you add this line to the Info.plist file (in the Runner folder):
+     --`<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
+     -- Make sure you add this line to the Release.entitlements file (in the Runner folder):
+     --`<key> com.apple.security.network.client </key> <true/>`
+- 3. IOS:
+     -- Make sure internet permission is enabled in the Info.plist file (in the Runner folder):
+     --`<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
 
 ## Features
 
