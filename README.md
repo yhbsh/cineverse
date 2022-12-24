@@ -59,7 +59,7 @@
 - The app implements a pagination system for fetching movies by page and having infinite scrolling.
 - The app implements a search system for searching movies by title.
 - The app implements a caching system for caching favorite movies.
-- The app fetches movies in a lazy manner (fetching all movies in one is time and resource consuming (posters,backdrops, etc...)).
+- The app fetches movies in a lazy manner meaning it only fetches movies that are displayed on the screen (fetching all movies in one is time and resource consuming (posters,backdrops, etc...)).
 
 ## Screenshots
 
