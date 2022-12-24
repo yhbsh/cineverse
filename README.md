@@ -45,7 +45,7 @@
 
 - The app uses [hook_riverpod](https://pub.dev/packages/hooks_riverpod) for state management.
 - The app uses [flutter_hooks](https://pub.dev/packages/flutter_hooks) for state management.
-- The app uses [go_router](https://pub.dev/packages/go_router) for routing.
+- The app uses [go_router](https://pub.dev/packages/go_router) for routing and navigation.
 - The app uses [shared_preferences](https://pub.dev/packages/shared_preferences)for storing favorite movies.
 - The app uses [freezed](https://pub.dev/packages/freezed) for data classes.
 - The app is dependent on [build_runner](https://pub.dev/packages/build_runner) for code generation.
@@ -54,6 +54,8 @@
 
 ## Details (for developers)
 
+- The app is written in a very clean and organized manner.
+- The app did not implement TDD (Test Driven Development) because of the time constraints and because it is a simple app and it is not necessary.
 - The app uses the [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction) to fetch movies.
 - The app follows the MVVM clean architecture pattern.
 - The app implements a pagination system for fetching movies by page and having infinite scrolling.
