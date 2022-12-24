@@ -30,7 +30,7 @@ class _SystemHash {
 }
 
 String $FavoriteMoviesNotifierHash() =>
-    r'77865e019e8ebbac11a7d3a17d4d66550d71bc64';
+    r'44fe5537cf62394c301934813fd9a397730cd864';
 
 /// See also [FavoriteMoviesNotifier].
 final favoriteMoviesNotifierProvider =

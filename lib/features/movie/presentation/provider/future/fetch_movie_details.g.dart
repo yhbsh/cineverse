@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $fetchMovieDetailsHash() => r'010d1cf01e789bf8e0f81d2ee86cbd3c4f781cb2';
+String $fetchMovieDetailsHash() => r'47c32ec6b0fd74cc35e815efb263c5d093bb474f';
 
 /// See also [fetchMovieDetails].
 class FetchMovieDetailsProvider extends FutureProvider<MovieDetailsEntity> {

@@ -29,8 +29,8 @@ class FavoriteMoviesNotifier extends _$FavoriteMoviesNotifier implements IFavori
 
     final useCase = ref.read(addMovieToFavoriteUseCaseProvider);
     final input = AddMovieToFavoriteUseCaseInput(movieEntity: movieDetailsEntity);
-    final result = await useCase(input);
-    result.fold((failure) => throw failure, (unit) {});
+    final output = await useCase(input);
+    output.fold((failure) => throw failure, (unit) {});
   }
 
   @override
@@ -40,22 +40,24 @@ class FavoriteMoviesNotifier extends _$FavoriteMoviesNotifier implements IFavori
 
     final useCase = ref.read(removeMovieFromFavoriteUseCaseProvider);
     final input = RemoveMovieFromFavoriteUseCaseInput(movieId: movieId);
-    final result = await useCase(input);
-    result.fold((failure) => throw failure, (unit) {});
+    final output = await useCase(input);
+    output.fold((failure) => throw failure, (unit) {});
   }
 
   @override
   Future<List<MovieDetailsEntity>> get favoriteMovies async {
     final useCase = ref.read(getFavoriteMoviesUseCaseProvider);
     const input = NoInput();
-    final result = await useCase(input);
+    final output = await useCase(input);
 
-    return result.fold((failure) => throw failure, (favoriteMovies) => favoriteMovies);
+    return output.fold((failure) => throw failure, (favoriteMovies) => favoriteMovies);
   }
 
   @override
   Future<void> filterFavoriteMovies(String query) async => state = query.isEmpty
-      ? AsyncData(await favoriteMovies)
+      ? AsyncData(
+          await favoriteMovies,
+        )
       : AsyncData(
           state.requireValue.where((movie) => movie.title.toLowerCase().contains(query.toLowerCase())).toList(),
         );

@@ -122,3 +122,15 @@ final fetchBackdropImageUseCaseProvider = Provider<FetchBackdropImageUseCase>(
       : $fetchBackdropImageUseCaseHash,
 );
 typedef FetchBackdropImageUseCaseRef = ProviderRef<FetchBackdropImageUseCase>;
+String $fetchMovieCreditsUseCaseHash() =>
+    r'e7801c3071a391a9d028ab565cc4a2f14aa2214a';
+
+/// See also [fetchMovieCreditsUseCase].
+final fetchMovieCreditsUseCaseProvider = Provider<FetchMovieCreditsUseCase>(
+  fetchMovieCreditsUseCase,
+  name: r'fetchMovieCreditsUseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : $fetchMovieCreditsUseCaseHash,
+);
+typedef FetchMovieCreditsUseCaseRef = ProviderRef<FetchMovieCreditsUseCase>;

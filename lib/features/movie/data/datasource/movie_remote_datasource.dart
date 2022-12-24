@@ -7,6 +7,7 @@ import '../../domain/entity/movie_details_entity.dart';
 import '../../domain/entity/movie_exception.dart';
 import '../../presentation/constant/movies_enum.dart';
 import '../../presentation/constant/movies_json_key.dart';
+import '../model/response/movie_credits_response.dart';
 import '../model/response/movie_details_response.dart';
 import '../model/response/movie_images_response.dart';
 import '../model/response/movies_response.dart';
@@ -19,6 +20,7 @@ abstract class IMoviesRemoteDatasource {
   Future<Uint8List> fetchBackdropImage({required String backdropPath});
   Future<MovieDetailsResponse> fetchMovieDetails({required int movieId});
   Future<MoviesResponse> fetchSearchMovies({required String query, required int page, required bool includeAdult});
+  Future<MovieCreditsResponse> fetchMovieCredits({required int movieId});
 
   const IMoviesRemoteDatasource();
 }
@@ -118,6 +120,19 @@ class MoviesRemoteDatasourceImpl implements IMoviesRemoteDatasource {
       final json = response.data as Map<String, dynamic>;
       final moviesResponse = MoviesResponse.fromJson(json);
       return moviesResponse;
+    } on DioError catch (dioErr) {
+      throw MovieException(message: dioErr.message, code: dioErr.response?.statusCode);
+    }
+  }
+
+  @override
+  Future<MovieCreditsResponse> fetchMovieCredits({required int movieId}) async {
+    final url = '${AppConst.baseUrl}/movie/$movieId/credits?api_key=${AppConst.apiKey}&language=en-US';
+    try {
+      final response = await _client.get(url);
+      final json = response.data as Map<String, dynamic>;
+      final movieCreditsResponse = MovieCreditsResponse.fromJson(json);
+      return movieCreditsResponse;
     } on DioError catch (dioErr) {
       throw MovieException(message: dioErr.message, code: dioErr.response?.statusCode);
     }

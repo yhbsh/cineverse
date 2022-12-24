@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fetch_backdrop_image.dart';
+part of 'fetch_movie_credits.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,64 +29,63 @@ class _SystemHash {
   }
 }
 
-String $fetchBackdropImageHash() => r'fe86ed2bb10cbeb4863225341772162190e4c01d';
+String $fetchMovieCreditsHash() => r'32da3132b86154e5ee5d48f8f883445c2bedfa73';
 
-/// See also [fetchBackdropImage].
-class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
-  FetchBackdropImageProvider({
-    required this.backdropPath,
+/// See also [fetchMovieCredits].
+class FetchMovieCreditsProvider extends FutureProvider<MovieCreditsEntity> {
+  FetchMovieCreditsProvider({
+    required this.id,
   }) : super(
-          (ref) => fetchBackdropImage(
+          (ref) => fetchMovieCredits(
             ref,
-            backdropPath: backdropPath,
+            id: id,
           ),
-          from: fetchBackdropImageProvider,
-          name: r'fetchBackdropImageProvider',
+          from: fetchMovieCreditsProvider,
+          name: r'fetchMovieCreditsProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $fetchBackdropImageHash,
+                  : $fetchMovieCreditsHash,
         );
 
-  final String? backdropPath;
+  final int id;
 
   @override
   bool operator ==(Object other) {
-    return other is FetchBackdropImageProvider &&
-        other.backdropPath == backdropPath;
+    return other is FetchMovieCreditsProvider && other.id == id;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, backdropPath.hashCode);
+    hash = _SystemHash.combine(hash, id.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
-typedef FetchBackdropImageRef = FutureProviderRef<Uint8List>;
+typedef FetchMovieCreditsRef = FutureProviderRef<MovieCreditsEntity>;
 
-/// See also [fetchBackdropImage].
-final fetchBackdropImageProvider = FetchBackdropImageFamily();
+/// See also [fetchMovieCredits].
+final fetchMovieCreditsProvider = FetchMovieCreditsFamily();
 
-class FetchBackdropImageFamily extends Family<AsyncValue<Uint8List>> {
-  FetchBackdropImageFamily();
+class FetchMovieCreditsFamily extends Family<AsyncValue<MovieCreditsEntity>> {
+  FetchMovieCreditsFamily();
 
-  FetchBackdropImageProvider call({
-    required String? backdropPath,
+  FetchMovieCreditsProvider call({
+    required int id,
   }) {
-    return FetchBackdropImageProvider(
-      backdropPath: backdropPath,
+    return FetchMovieCreditsProvider(
+      id: id,
     );
   }
 
   @override
-  FutureProvider<Uint8List> getProviderOverride(
-    covariant FetchBackdropImageProvider provider,
+  FutureProvider<MovieCreditsEntity> getProviderOverride(
+    covariant FetchMovieCreditsProvider provider,
   ) {
     return call(
-      backdropPath: provider.backdropPath,
+      id: provider.id,
     );
   }
 
@@ -97,5 +96,5 @@ class FetchBackdropImageFamily extends Family<AsyncValue<Uint8List>> {
   List<ProviderOrFamily>? get dependencies => null;
 
   @override
-  String? get name => r'fetchBackdropImageProvider';
+  String? get name => r'fetchMovieCreditsProvider';
 }

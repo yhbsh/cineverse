@@ -10,7 +10,7 @@ part 'fetch_search_movies.g.dart';
 FutureOr<MoviesEntity> searchMovies(SearchMoviesRef ref, {required String query, required int page, bool includeAdult = false}) async {
   final useCase = ref.read(fetchSearchMoviesUseCaseProvider);
   final input = FetchSearchMoviesUseCaseInput(query: query, page: page, includeAdult: includeAdult);
-  final result = await useCase(input);
+  final output = await useCase(input);
 
-  return result.fold((failure) => throw failure, (moviesEntity) => moviesEntity);
+  return output.fold((failure) => throw failure, (moviesEntity) => moviesEntity);
 }

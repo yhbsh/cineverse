@@ -10,6 +10,6 @@ part 'fetch_movie_images.g.dart';
 FutureOr<MovieImagesEntity> fetchMovieImages(FetchMovieImagesRef ref, {required int id}) async {
   final useCase = ref.read(fetchMovieImagesUseCaseProvider);
   final input = FetchMovieImagesUseCaseInput(movieId: id);
-  final result = await useCase(input);
-  return result.fold((failure) => throw failure, (movieImagesEntity) => movieImagesEntity);
+  final output = await useCase(input);
+  return output.fold((failure) => throw failure, (movieImagesEntity) => movieImagesEntity);
 }

@@ -12,7 +12,7 @@ part 'fetch_movies.g.dart';
 Future<MoviesEntity> fetchMovies(FetchMoviesRef ref, {required MoviesType type, required int page, required MovieGenreEntity genre}) async {
   final useCase = ref.read(fetchMoviesUseCaseProvider);
   final input = FetchMoviesUseCaseInput(type: type, page: page, genre: genre);
-  final result = await useCase(input);
+  final output = await useCase(input);
 
-  return result.fold((failure) => throw failure, (movies) => movies);
+  return output.fold((failure) => throw failure, (movies) => movies);
 }

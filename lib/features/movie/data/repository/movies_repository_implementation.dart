@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../../../core/data/network/network_info.dart';
 import '../../../../core/presentation/resource/app_failure_const.dart';
+import '../../domain/entity/movie_credits_entity.dart';
 import '../../domain/entity/movie_details_entity.dart';
 import '../../domain/entity/movie_exception.dart';
 import '../../domain/entity/movie_failure.dart';
@@ -13,6 +14,7 @@ import '../../domain/entity/movies_entity.dart';
 import '../../domain/repository/movie_repository_interface.dart';
 import '../datasource/movie_remote_datasource.dart';
 import '../model/request/fetch_backdrop_image_request.dart';
+import '../model/request/fetch_movie_credits_request.dart';
 import '../model/request/fetch_movie_details_request.dart';
 import '../model/request/fetch_movie_images_request.dart';
 import '../model/request/fetch_movies_request.dart';
@@ -135,6 +137,27 @@ class MoviesRepoImpl implements IMoviesRepo {
       try {
         final backdropImage = await _remoteDatasource.fetchBackdropImage(backdropPath: request.backdropPath);
         return right(backdropImage);
+      } on MovieException catch (err) {
+        final failure = MovieFailure(message: err.message, code: err.code);
+        return left(failure);
+      } catch (_) {
+        log(_.toString());
+        const failure = MovieFailure(message: AppFailureMessages.unknownError);
+        return left(failure);
+      }
+    } else {
+      const failure = MovieFailure(message: AppFailureMessages.noInternet);
+      return left(failure);
+    }
+  }
+
+  @override
+  Future<Either<MovieFailure, MovieCreditsEntity>> fetchMovieCredits(FetchMovieCreditsRequest request) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final movieCreditsResponse = await _remoteDatasource.fetchMovieCredits(movieId: request.movieId);
+        final movieCreditsEntity = MovieCreditsEntity.fromResponse(movieCreditsResponse);
+        return right(movieCreditsEntity);
       } on MovieException catch (err) {
         final failure = MovieFailure(message: err.message, code: err.code);
         return left(failure);

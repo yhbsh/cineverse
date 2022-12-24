@@ -12,6 +12,6 @@ FutureOr<Uint8List> fetchPosterImage(FetchPosterImageRef ref, {required String? 
   if (posterPath == null) throw const MovieFailure(message: 'Not Movie Poster');
   final useCase = ref.read(fetchPosterImageUseCaseProvider);
   final input = FetchPosterImageUseCaseInput(posterPath: posterPath);
-  final result = await useCase(input);
-  return result.fold((failure) => throw failure, (posterImageData) => posterImageData);
+  final output = await useCase(input);
+  return output.fold((failure) => throw failure, (posterImageData) => posterImageData);
 }

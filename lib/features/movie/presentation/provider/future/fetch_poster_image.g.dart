@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $fetchPosterImageHash() => r'b346c4e633001680a94cfa04ecf08b78c27e64e7';
+String $fetchPosterImageHash() => r'7f443e83583d8795edaea6429f688496de0c19d1';
 
 /// See also [fetchPosterImage].
 class FetchPosterImageProvider extends FutureProvider<Uint8List> {
