@@ -1,4 +1,4 @@
-# Movies App - A simple app to search for movies
+# Movies App - A simple app to search for movies (Read the README.md file for more details)
 
 ## Installation
 
