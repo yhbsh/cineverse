@@ -30,9 +30,9 @@
 
 - 1. Search for Movies
      - Search for movies by title
-     - View movie details
+     - View movie details (overview, release date, runtime, cast, etc.)
      - View movie date, rating, and runtime, etc.
-     - View movie backdrop image, poster image
+     - View movie backdrop image, poster image, and cast images
 - 2. Favorite movies
      - View favorite movies
      - Add a movie to favorites
