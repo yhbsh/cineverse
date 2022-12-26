@@ -26,7 +26,7 @@ bool _getConnectionStateFromResult(ConnectivityResult event) {
     case ConnectivityResult.none:
       return false;
     case ConnectivityResult.mobile:
-      return true;
+      return false;
     case ConnectivityResult.wifi:
       return true;
     case ConnectivityResult.bluetooth:
