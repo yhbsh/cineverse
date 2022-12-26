@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../domain/entity/movie_details_entity.dart';
-import 'movie_details_over_and_cast_column.dart';
+import 'movie_more_details_column.dart';
 import 'movie_partial_details_list.dart';
 
 class MovieDetailsColumn extends HookConsumerWidget {
@@ -19,7 +19,7 @@ class MovieDetailsColumn extends HookConsumerWidget {
         SizedBox(height: size.height * 0.05),
         MoviePartialDetailsListView(movieDetails: movieDetails),
         SizedBox(height: size.height * 0.02),
-        MovieDetailsOverviewAndCastColumn(movieDetails: movieDetails),
+        MovieMoreDetailsColumn(movieDetails: movieDetails),
         SizedBox(height: size.height * 0.05),
       ],
     );

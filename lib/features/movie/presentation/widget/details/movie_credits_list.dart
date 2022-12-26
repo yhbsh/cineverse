@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../../domain/entity/movie_details_entity.dart';
 import '../../provider/future/fetch_movie_credits.dart';
 
-class MovieCreditsGrid extends HookConsumerWidget {
-  const MovieCreditsGrid({super.key, required this.movieDetails});
+class MovieCreditsList extends HookConsumerWidget {
+  const MovieCreditsList({super.key, required this.id});
 
-  final MovieDetailsEntity movieDetails;
+  final int id;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
-    final movieCreditsAsyncValue = ref.watch(fetchMovieCreditsProvider(id: movieDetails.id));
+    final movieCreditsAsyncValue = ref.watch(fetchMovieCreditsProvider(id: id));
     return SizedBox(
       height: size.height * 0.4,
       child: movieCreditsAsyncValue.when(
