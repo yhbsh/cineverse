@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/presentation/provider/stream/network_provider.dart';
+import '../../../../core/presentation/view/no_internet_connection.dart';
 import '../../../../core/presentation/widget/circular_indicator.dart';
 import '../constant/movies_enum.dart';
 import '../provider/state/query_provider.dart';
@@ -23,49 +24,50 @@ class MoviesView extends HookConsumerWidget {
       return null;
     }, []);
 
-    return Scaffold(
-      appBar: AppBar(title: const Text('Movies')),
-      body: SizedBox(
-        width: double.infinity,
-        child: isConnectedAsyncValue.maybeWhen(
-          orElse: () => const CircularIndicator(),
-          data: (isConnected) {
-            if (!isConnected) return const Center(child: Text('No internet connection'));
-            return _contentView(ref);
-          },
-        ),
-      ),
+    return isConnectedAsyncValue.maybeWhen(
+      orElse: () => const CircularIndicator(),
+      data: (isConnected) {
+        if (!isConnected) return const NoInternetConnectionView();
+
+        return _contentView(ref);
+      },
     );
   }
 
   Widget _contentView(WidgetRef ref) {
     final size = MediaQuery.of(ref.context).size;
-    return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(height: size.height * 0.03),
-          const MovieSearchFieldButton(),
-          SizedBox(height: size.height * 0.03),
-          const GenresListView(),
-          SizedBox(height: size.height * 0.05),
-          const MoviesTypeRow(type: MoviesType.topRated),
-          SizedBox(height: size.height * 0.04),
-          const TopRatedMoviesCarousel(),
-          SizedBox(height: size.height * 0.05),
-          const MoviesTypeRow(type: MoviesType.upcoming),
-          SizedBox(height: size.height * 0.02),
-          const MoviesListView(type: MoviesType.upcoming),
-          SizedBox(height: size.height * 0.02),
-          const MoviesTypeRow(type: MoviesType.nowPlaying),
-          SizedBox(height: size.height * 0.02),
-          const MoviesListView(type: MoviesType.nowPlaying),
-          SizedBox(height: size.height * 0.02),
-          const MoviesTypeRow(type: MoviesType.popular),
-          SizedBox(height: size.height * 0.02),
-          const MoviesListView(type: MoviesType.popular),
-          SizedBox(height: size.height * 0.1),
-        ],
+    return Scaffold(
+      appBar: AppBar(title: const Text('Movies')),
+      body: SizedBox(
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(height: size.height * 0.03),
+              const MovieSearchFieldButton(),
+              SizedBox(height: size.height * 0.03),
+              const GenresListView(),
+              SizedBox(height: size.height * 0.05),
+              const MoviesTypeRow(type: MoviesType.topRated),
+              SizedBox(height: size.height * 0.04),
+              const TopRatedMoviesCarousel(),
+              SizedBox(height: size.height * 0.05),
+              const MoviesTypeRow(type: MoviesType.upcoming),
+              SizedBox(height: size.height * 0.02),
+              const MoviesListView(type: MoviesType.upcoming),
+              SizedBox(height: size.height * 0.02),
+              const MoviesTypeRow(type: MoviesType.nowPlaying),
+              SizedBox(height: size.height * 0.02),
+              const MoviesListView(type: MoviesType.nowPlaying),
+              SizedBox(height: size.height * 0.02),
+              const MoviesTypeRow(type: MoviesType.popular),
+              SizedBox(height: size.height * 0.02),
+              const MoviesListView(type: MoviesType.popular),
+              SizedBox(height: size.height * 0.1),
+            ],
+          ),
+        ),
       ),
     );
   }

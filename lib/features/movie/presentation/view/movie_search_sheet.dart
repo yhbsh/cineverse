@@ -2,14 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../core/presentation/provider/stream/network_provider.dart';
 import '../../../../core/presentation/resource/app_color.dart';
+import '../../../../core/presentation/view/no_internet_connection.dart';
+import '../../../../core/presentation/widget/circular_indicator.dart';
 import '../provider/state/query_provider.dart';
 import '../widget/movie/search_movies_list_view.dart';
 
 class MovieSearchSheet extends HookConsumerWidget {
   const MovieSearchSheet({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isConnectedAsyncValue = ref.watch(isConnectedProvider);
+
+    return isConnectedAsyncValue.maybeWhen(
+      orElse: () => const CircularIndicator(),
+      data: (isConnected) {
+        if (!isConnected) return const NoInternetConnectionView();
+
+        return _contentView(ref);
+      },
+    );
+  }
+
+  Widget _contentView(WidgetRef ref) {
     final focusNode = useFocusNode();
     return Scaffold(
       appBar: AppBar(
