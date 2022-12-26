@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../core/presentation/widget/circular_indicator.dart';
 import '../../../domain/entity/movie_details_entity.dart';
 import '../../provider/future/fetch_movie_credits.dart';
 
@@ -12,16 +13,18 @@ class MovieCreditsGrid extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
     final movieCreditsAsyncValue = ref.watch(fetchMovieCreditsProvider(id: movieDetails.id));
-    return movieCreditsAsyncValue.when(
-      error: (error, stack) => Text('$error $stack'),
-      loading: () => const CircularProgressIndicator.adaptive(),
-      data: (movieCredits) {
-        return SizedBox(
-          height: size.height * 0.4,
-          child: GridView.builder(
+    return SizedBox(
+      height: size.height * 0.4,
+      child: movieCreditsAsyncValue.when(
+        error: (error, stack) => Text('$error $stack'),
+        loading: () => const CircularIndicator(),
+        data: (movieCredits) {
+          return ListView.separated(
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+            scrollDirection: Axis.horizontal,
             physics: const ClampingScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 0.7),
             itemCount: movieCredits.cast.length,
+            separatorBuilder: (context, index) => SizedBox(width: size.width * 0.08),
             itemBuilder: (context, index) {
               final cast = movieCredits.cast[index];
               return Column(
@@ -29,18 +32,23 @@ class MovieCreditsGrid extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: size.width * 0.2,
-                    height: size.height * 0.2,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    width: size.width * 0.3,
+                    height: size.height * 0.25,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(7)),
                     child: cast.profilePath == null
                         ? const Icon(Icons.person, color: Colors.white, size: 50)
-                        : Image.network('https://image.tmdb.org/t/p/w500${cast.profilePath}',
-                            fit: BoxFit.cover,
-                            loadingBuilder: (context, child, loadingProgress) {
-                              if (loadingProgress == null) return child;
-                              return const Center(child: CircularProgressIndicator.adaptive());
-                            },
-                            errorBuilder: (context, error, stackTrace) => const Icon(Icons.person, color: Colors.white, size: 50)),
+                        : ClipRRect(
+                            borderRadius: BorderRadius.circular(7),
+                            child: Image.network(
+                              'https://image.tmdb.org/t/p/w500${cast.profilePath}',
+                              fit: BoxFit.cover,
+                              loadingBuilder: (context, child, loadingProgress) {
+                                if (loadingProgress == null) return child;
+                                return const CircularIndicator();
+                              },
+                              errorBuilder: (context, error, stackTrace) => const Icon(Icons.person, color: Colors.white, size: 50),
+                            ),
+                          ),
                   ),
                   SizedBox(height: size.height * 0.02),
                   Text(
@@ -55,9 +63,9 @@ class MovieCreditsGrid extends HookConsumerWidget {
                 ],
               );
             },
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

@@ -53,7 +53,7 @@ class MovieDetailsOverviewAndCastColumn extends HookConsumerWidget {
             ),
           ],
         ),
-        if (selectedIndexNotifier.value == 0) SizedBox(height: size.height * 0.05),
+        SizedBox(height: size.height * 0.05),
         if (selectedIndexNotifier.value == 0)
           Padding(
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.12),
@@ -63,7 +63,7 @@ class MovieDetailsOverviewAndCastColumn extends HookConsumerWidget {
             ),
           ),
         if (selectedIndexNotifier.value == 1) MovieCreditsGrid(movieDetails: movieDetails),
-        if (selectedIndexNotifier.value == 1) SizedBox(height: size.height * 0.05),
+        SizedBox(height: size.height * 0.05),
       ],
     );
   }
