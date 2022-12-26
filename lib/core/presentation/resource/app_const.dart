@@ -12,6 +12,7 @@ class AppConst {
   static const String basePosterUrl = 'https://image.tmdb.org/t/p/w500';
   static const String baseBackdropUrl = 'https://image.tmdb.org/t/p/w780';
   static const String baseProfileUrl = 'https://image.tmdb.org/t/p/w185';
+  static const String baseYoutubeThumbnailUrl = 'https://img.youtube.com/vi';
 
   static final isDesktop = Platform.isWindows || Platform.isLinux || Platform.isMacOS;
   static final isMobile = Platform.isAndroid || Platform.isIOS;

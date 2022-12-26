@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:movies_app_okoul/features/movie/domain/entity/movie_videos_entity.dart';
+import 'package:movies_app_okoul/features/movie/data/model/request/fetch_movie_videos_request.dart';
 
 import '../../../../core/data/network/network_info.dart';
 import '../../../../core/presentation/resource/app_failure_const.dart';
@@ -158,6 +160,27 @@ class MoviesRepoImpl implements IMoviesRepo {
         final movieCreditsResponse = await _remoteDatasource.fetchMovieCredits(movieId: request.movieId);
         final movieCreditsEntity = MovieCreditsEntity.fromResponse(movieCreditsResponse);
         return right(movieCreditsEntity);
+      } on MovieException catch (err) {
+        final failure = MovieFailure(message: err.message, code: err.code);
+        return left(failure);
+      } catch (_) {
+        log(_.toString());
+        const failure = MovieFailure(message: AppFailureMessages.unknownError);
+        return left(failure);
+      }
+    } else {
+      const failure = MovieFailure(message: AppFailureMessages.noInternet);
+      return left(failure);
+    }
+  }
+
+  @override
+  Future<Either<MovieFailure, MovieVideosEntity>> fetchMovieVideos(FetchMovieVideosRequest request) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final movieVideosResponse = await _remoteDatasource.fetchMovieVideos(movieId: request.movieId);
+        final movieVideosEntity = MovieVideosEntity.fromResponse(movieVideosResponse);
+        return right(movieVideosEntity);
       } on MovieException catch (err) {
         final failure = MovieFailure(message: err.message, code: err.code);
         return left(failure);

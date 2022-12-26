@@ -134,3 +134,15 @@ final fetchMovieCreditsUseCaseProvider = Provider<FetchMovieCreditsUseCase>(
       : $fetchMovieCreditsUseCaseHash,
 );
 typedef FetchMovieCreditsUseCaseRef = ProviderRef<FetchMovieCreditsUseCase>;
+String $fetchMovieVideosUseCaseHash() =>
+    r'08c4273edcf8abd1d5f1bc14590e3fdfa3ad3bd4';
+
+/// See also [fetchMovieVideosUseCase].
+final fetchMovieVideosUseCaseProvider = Provider<FetchMovieVideosUseCase>(
+  fetchMovieVideosUseCase,
+  name: r'fetchMovieVideosUseCaseProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : $fetchMovieVideosUseCaseHash,
+);
+typedef FetchMovieVideosUseCaseRef = ProviderRef<FetchMovieVideosUseCase>;

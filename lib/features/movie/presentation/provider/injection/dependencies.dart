@@ -9,6 +9,7 @@ import '../../../domain/usecase/fetch_backdrop_image_usecase.dart';
 import '../../../domain/usecase/fetch_movie_credits_usecase.dart';
 import '../../../domain/usecase/fetch_movie_details_usecase.dart';
 import '../../../domain/usecase/fetch_movie_images_usecase.dart';
+import '../../../domain/usecase/fetch_movie_videos_usecase.dart';
 import '../../../domain/usecase/fetch_movies_usecase.dart';
 import '../../../domain/usecase/fetch_poster_image_usecase.dart';
 
@@ -67,4 +68,10 @@ FetchBackdropImageUseCase fetchBackdropImageUseCase(FetchBackdropImageUseCaseRef
 FetchMovieCreditsUseCase fetchMovieCreditsUseCase(FetchMovieCreditsUseCaseRef ref) {
   final repo = ref.read(moviesRepoProvider);
   return FetchMovieCreditsUseCase(repo);
+}
+
+@Riverpod(keepAlive: true)
+FetchMovieVideosUseCase fetchMovieVideosUseCase(FetchMovieVideosUseCaseRef ref) {
+  final repo = ref.read(moviesRepoProvider);
+  return FetchMovieVideosUseCase(repo);
 }
