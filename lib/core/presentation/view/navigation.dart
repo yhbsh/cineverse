@@ -4,6 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../resource/app_route_const.dart';
 
+final showBottomNavigationBarProvider = StateProvider<bool>((ref) => true);
+
 class NavigationView extends HookConsumerWidget {
   const NavigationView({super.key, required this.child});
 

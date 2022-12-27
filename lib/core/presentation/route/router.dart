@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:movies_app_okoul/features/movie/presentation/view/movie_search_sheet.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../features/favorite/presentation/view/favorite_movies.dart';
@@ -9,6 +8,8 @@ import '../../../features/movie/presentation/view/all_movies.dart';
 import '../../../features/movie/presentation/view/movie.dart';
 import '../../../features/movie/presentation/view/movie_details.dart';
 import '../../../features/movie/presentation/view/movie_search.dart';
+import '../../../features/movie/presentation/view/movie_search_sheet.dart';
+import '../../../features/movie/presentation/view/movie_video.dart';
 import '../resource/app_route_const.dart';
 import '../view/navigation.dart';
 
@@ -64,6 +65,15 @@ GoRouter router(RouterRef ref) {
             pageBuilder: (context, state) => FadeTransitionPage(key: state.pageKey, child: FavoriteMoviesView(key: state.pageKey)),
           ),
         ],
+      ),
+      GoRoute(
+        path: AppRoutePath.video,
+        name: AppRouteName.video,
+        pageBuilder: (context, state) {
+          final key = state.params['key'] as String;
+
+          return FadeTransitionPage(child: MovieVideoView(key: state.pageKey, videoKey: key));
+        },
       ),
     ],
   );

@@ -24,7 +24,7 @@ class MoviesTypeRow extends HookConsumerWidget {
             style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.2),
           ),
           TextButton(
-            onPressed: () => GoRouter.of(context).goNamed(AppRouteName.allMovies, params: {'type': type.name}, extra: const Offset(.5, .5)),
+            onPressed: () => GoRouter.of(context).pushNamed(AppRouteName.allMovies, params: {'type': type.name}),
             child: const Text(
               'See All',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.2),

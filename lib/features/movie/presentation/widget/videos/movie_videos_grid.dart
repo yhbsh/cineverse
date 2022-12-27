@@ -5,9 +5,10 @@ import '../../../domain/entity/movie_videos_entity.dart';
 import 'movie_video_card.dart';
 
 class MovieVideosGrid extends HookConsumerWidget {
-  const MovieVideosGrid({super.key, required this.filteredVideos});
+  const MovieVideosGrid({super.key, required this.filteredVideos, required this.movieId});
 
   final List<MovieVideoEntity> filteredVideos;
+  final int movieId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +19,10 @@ class MovieVideosGrid extends HookConsumerWidget {
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 16 / 9),
       itemBuilder: (context, index) {
         final video = filteredVideos[index];
-        return MovieVideoCard(videoEntity: video);
+        return MovieVideoCard(
+          videoEntity: video,
+          movieId: movieId,
+        );
       },
     );
   }

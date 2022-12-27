@@ -9,9 +9,10 @@ import 'movie_videos_grid.dart';
 import 'movie_videos_types_row.dart';
 
 class MovieVideosColumn extends HookConsumerWidget {
-  const MovieVideosColumn({super.key, required this.id});
+  const MovieVideosColumn({super.key, required this.id, required this.movieId});
 
   final int id;
+  final int movieId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,7 +35,10 @@ class MovieVideosColumn extends HookConsumerWidget {
           children: [
             MovieVideoTypesRow(selectedIndexNotifier: selectedIndexNotifier),
             SizedBox(height: size.height * 0.03),
-            MovieVideosGrid(filteredVideos: filteredVideos),
+            MovieVideosGrid(
+              filteredVideos: filteredVideos,
+              movieId: movieId,
+            ),
           ],
         );
       },

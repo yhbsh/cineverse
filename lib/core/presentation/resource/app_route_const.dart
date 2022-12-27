@@ -8,6 +8,7 @@ class AppRouteName {
   static const String allMovies = 'All Movies';
   static const String movieDetails = 'Movie Details';
   static const String searchSheet = 'Search Sheet';
+  static const String video = 'Video';
 
   const AppRouteName._();
 }
@@ -20,6 +21,7 @@ class AppRoutePath {
   static const String allMovies = 'all-movies/:type';
   static const String movieDetails = 'movie-details/:id';
   static const String searchSheet = 'search-sheet';
+  static const String video = '/video/:key';
 
   const AppRoutePath._();
 }
