@@ -20,6 +20,8 @@
 - 1. Android
      - Make sure you add this line to the AndroidManifest.xml file
      - `<uses-permission android:name="android.permission.INTERNET" />`
+     - Change compileSdkVersion to 33 in the build.gradle file (in the android/app/ folder)
+     - Change minSdkVersion to 17 in the build.gradle file (in the android/app folder)
 - 2. Macos
      - Make sure you add this line to the Info.plist file (in the Runner folder)
      - `<key> NSAppTransportSecurity </key> <dict> <key> NSAllowsArbitraryLoads </key> <true/> </dict>`
