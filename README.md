@@ -11,7 +11,6 @@
 - Build the app for your platform (Android, iOS, Macos, Windows, Linux, Web, etc.)
 - Or install the app:
 - android -> [here](./output/app-release.apk)
-- macos -> [here]()
 - Enjoy!
 
 ## Platform Specifics
