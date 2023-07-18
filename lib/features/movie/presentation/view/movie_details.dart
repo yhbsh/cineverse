@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/presentation/provider/stream/network_provider.dart';
-import '../../../../core/presentation/view/no_internet_connection.dart';
-import '../../../../core/presentation/widget/circular_indicator.dart';
-import '../provider/future/fetch_movie_details.dart';
-import '../widget/details/movie_details_appbar.dart';
-import '../widget/details/movie_details_column.dart';
-import '../widget/details/movie_details_images.dart';
+import '../../../../lib.dart';
 
 class MovieDetailsView extends HookConsumerWidget {
   const MovieDetailsView({super.key, required this.id});

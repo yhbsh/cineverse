@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../domain/entity/movie_details_entity.dart';
-import 'movie_more_details_column.dart';
-import 'movie_partial_details_list.dart';
+import '../../../../../lib.dart';
 
 class MovieDetailsColumn extends HookConsumerWidget {
   const MovieDetailsColumn({Key? key, required this.movieDetails}) : super(key: key);

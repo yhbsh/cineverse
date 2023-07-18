@@ -2,26 +2,8 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:movies_app_okoul/features/movie/domain/entity/movie_videos_entity.dart';
-import 'package:movies_app_okoul/features/movie/data/model/request/fetch_movie_videos_request.dart';
 
-import '../../../../core/data/network/network_info.dart';
-import '../../../../core/presentation/resource/app_failure_const.dart';
-import '../../domain/entity/movie_credits_entity.dart';
-import '../../domain/entity/movie_details_entity.dart';
-import '../../domain/entity/movie_exception.dart';
-import '../../domain/entity/movie_failure.dart';
-import '../../domain/entity/movie_images_entity.dart';
-import '../../domain/entity/movies_entity.dart';
-import '../../domain/repository/movie_repository_interface.dart';
-import '../datasource/movie_remote_datasource.dart';
-import '../model/request/fetch_backdrop_image_request.dart';
-import '../model/request/fetch_movie_credits_request.dart';
-import '../model/request/fetch_movie_details_request.dart';
-import '../model/request/fetch_movie_images_request.dart';
-import '../model/request/fetch_movies_request.dart';
-import '../model/request/fetch_poster_image_request.dart';
-import '../model/request/fetch_search_movies_request.dart';
+import '../../../../lib.dart';
 
 class MoviesRepoImpl implements IMoviesRepo {
   final IMoviesRemoteDatasource _remoteDatasource;
@@ -33,7 +15,8 @@ class MoviesRepoImpl implements IMoviesRepo {
   Future<Either<MovieFailure, MoviesEntity>> fetchMovies(FetchMoviesRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
-        final moviesResponse = await _remoteDatasource.fetchMovies(type: request.type, page: request.page, genre: request.genre);
+        final moviesResponse =
+            await _remoteDatasource.fetchMovies(type: request.type, page: request.page, genre: request.genre);
         final moviesEntity = MoviesEntity.fromResponse(moviesResponse);
         return right(moviesEntity);
       } on MovieException catch (err) {
@@ -54,7 +37,8 @@ class MoviesRepoImpl implements IMoviesRepo {
   Future<Either<MovieFailure, MoviesEntity>> fetchSearchMovies(FetchSearchMoviesRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
-        final moviesResponse = await _remoteDatasource.fetchSearchMovies(query: request.query, page: request.page, includeAdult: request.includeAdult);
+        final moviesResponse = await _remoteDatasource.fetchSearchMovies(
+            query: request.query, page: request.page, includeAdult: request.includeAdult);
         final moviesEntity = MoviesEntity.fromResponse(moviesResponse);
         return right(moviesEntity);
       } on MovieException catch (err) {

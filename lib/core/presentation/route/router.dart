@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../features/favorite/presentation/view/favorite_movies.dart';
-import '../../../features/movie/presentation/constant/movies_enum.dart';
-import '../../../features/movie/presentation/view/all_movies.dart';
-import '../../../features/movie/presentation/view/movie.dart';
-import '../../../features/movie/presentation/view/movie_details.dart';
-import '../../../features/movie/presentation/view/movie_search.dart';
-import '../../../features/movie/presentation/view/movie_search_sheet.dart';
-import '../../../features/movie/presentation/view/movie_video.dart';
-import '../resource/app_route_const.dart';
-import '../view/navigation.dart';
+import '../../../lib.dart';
 
 part 'router.g.dart';
 
@@ -26,14 +17,16 @@ GoRouter router(RouterRef ref) {
           GoRoute(
             path: AppRoutePath.movie,
             name: AppRouteName.movie,
-            pageBuilder: (context, state) => FadeTransitionPage(key: state.pageKey, child: MoviesView(key: state.pageKey)),
+            pageBuilder: (context, state) =>
+                FadeTransitionPage(key: state.pageKey, child: MoviesView(key: state.pageKey)),
             routes: [
               GoRoute(
                 path: AppRoutePath.allMovies,
                 name: AppRouteName.allMovies,
                 pageBuilder: (context, state) {
-                  final typeName = state.params['type'] as String;
-                  final type = MoviesType.values.firstWhere((type) => type.name == typeName, orElse: () => MoviesType.upcoming);
+                  final typeName = state.pathParameters['type'] as String;
+                  final type =
+                      MoviesType.values.firstWhere((type) => type.name == typeName, orElse: () => MoviesType.upcoming);
 
                   return FadeTransitionPage(key: state.pageKey, child: AllMoviesView(key: state.pageKey, type: type));
                 },
@@ -42,7 +35,7 @@ GoRouter router(RouterRef ref) {
                 path: AppRoutePath.movieDetails,
                 name: AppRouteName.movieDetails,
                 pageBuilder: (context, state) {
-                  final id = int.parse(state.params['id'] as String);
+                  final id = int.parse(state.pathParameters['id'] as String);
 
                   return FadeTransitionPage(key: state.pageKey, child: MovieDetailsView(key: state.pageKey, id: id));
                 },
@@ -50,19 +43,22 @@ GoRouter router(RouterRef ref) {
               GoRoute(
                 path: AppRoutePath.searchSheet,
                 name: AppRouteName.searchSheet,
-                pageBuilder: (context, state) => SlideTransitionPage(key: state.pageKey, child: MovieSearchSheet(key: state.pageKey)),
+                pageBuilder: (context, state) =>
+                    SlideTransitionPage(key: state.pageKey, child: MovieSearchSheet(key: state.pageKey)),
               ),
             ],
           ),
           GoRoute(
             path: AppRoutePath.search,
             name: AppRouteName.search,
-            pageBuilder: (context, state) => FadeTransitionPage(key: state.pageKey, child: MovieSearchView(key: state.pageKey)),
+            pageBuilder: (context, state) =>
+                FadeTransitionPage(key: state.pageKey, child: MovieSearchView(key: state.pageKey)),
           ),
           GoRoute(
             path: AppRoutePath.favorite,
             name: AppRouteName.favorite,
-            pageBuilder: (context, state) => FadeTransitionPage(key: state.pageKey, child: FavoriteMoviesView(key: state.pageKey)),
+            pageBuilder: (context, state) =>
+                FadeTransitionPage(key: state.pageKey, child: FavoriteMoviesView(key: state.pageKey)),
           ),
         ],
       ),
@@ -70,7 +66,7 @@ GoRouter router(RouterRef ref) {
         path: AppRoutePath.video,
         name: AppRouteName.video,
         pageBuilder: (context, state) {
-          final key = state.params['key'] as String;
+          final key = state.pathParameters['key'] as String;
 
           return FadeTransitionPage(child: MovieVideoView(key: state.pageKey, videoKey: key));
         },
@@ -129,7 +125,8 @@ class SlideTransitionPage extends CustomTransitionPage {
     Widget child,
   ) =>
       SlideTransition(
-        position: Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero).animate(CurvedAnimation(parent: animation, curve: Curves.easeInQuart)),
+        position: Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+            .animate(CurvedAnimation(parent: animation, curve: Curves.easeInQuart)),
         child: child,
       );
 }
@@ -158,7 +155,8 @@ class SlideRightTransitionPage extends CustomTransitionPage {
     Widget child,
   ) =>
       SlideTransition(
-        position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero).animate(CurvedAnimation(parent: animation, curve: Curves.easeInQuart)),
+        position: Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero)
+            .animate(CurvedAnimation(parent: animation, curve: Curves.easeInQuart)),
         child: child,
       );
 }
@@ -187,7 +185,8 @@ class SlideLeftTransitionPage extends CustomTransitionPage {
     Widget child,
   ) =>
       SlideTransition(
-        position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(CurvedAnimation(parent: animation, curve: Curves.easeInQuart)),
+        position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
+            .animate(CurvedAnimation(parent: animation, curve: Curves.easeInQuart)),
         child: child,
       );
 }

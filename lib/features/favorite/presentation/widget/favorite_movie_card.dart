@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:movies_app_okoul/core/presentation/resource/app_color.dart';
-import 'package:movies_app_okoul/core/presentation/widget/circular_indicator.dart';
 
-import '../../../../core/presentation/resource/app_route_const.dart';
-import '../../../movie/domain/entity/movie_details_entity.dart';
-import '../../../movie/presentation/provider/future/fetch_poster_image.dart';
+import '../../../../lib.dart';
 
 class FavoriteMovieCard extends HookConsumerWidget {
   const FavoriteMovieCard({super.key, required this.movie});
@@ -30,7 +26,8 @@ class FavoriteMovieCard extends HookConsumerWidget {
               orElse: () => const Card(color: AppColor.appBarBackground, child: CircularIndicator()),
               data: (poster) {
                 return GestureDetector(
-                  onTap: () => GoRouter.of(context).pushNamed(AppRouteName.movieDetails, params: {'id': '${movie.id}'}),
+                  onTap: () =>
+                      GoRouter.of(context).pushNamed(AppRouteName.movieDetails, pathParameters: {'id': '${movie.id}'}),
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(5)),
                     child: Image.memory(poster, fit: BoxFit.cover, filterQuality: FilterQuality.high),

@@ -2,17 +2,20 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../constant/movies_enum.dart';
-import '../../provider/future/fetch_movies.dart';
-import '../../provider/notifier/movie_genre_notifier.dart';
-import 'movie_carousel_card.dart';
+import '../../../../../lib.dart';
 
 class TopRatedMoviesCarousel extends HookConsumerWidget {
   const TopRatedMoviesCarousel({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(ref.context).size;
-    final moviesAsyncValue = ref.watch(fetchMoviesProvider(type: MoviesType.topRated, page: 1, genre: ref.watch(genreNotifierProvider)));
+    final moviesAsyncValue = ref.watch(
+      fetchMoviesProvider(
+        type: MoviesType.topRated,
+        page: 1,
+        genre: ref.watch(genreNotifierProvider),
+      ),
+    );
 
     return SizedBox(
       height: size.height * 0.25,
@@ -31,7 +34,11 @@ class TopRatedMoviesCarousel extends HookConsumerWidget {
               pauseAutoPlayOnTouch: true,
               scrollDirection: Axis.horizontal,
             ),
-            items: moviesEntity.movies.asMap().entries.map((mapEntry) => MovieCarouselCard(movie: mapEntry.value, index: mapEntry.key)).toList(),
+            items: moviesEntity.movies
+                .asMap()
+                .entries
+                .map((mapEntry) => MovieCarouselCard(movie: mapEntry.value, index: mapEntry.key))
+                .toList(),
           );
         },
       ),

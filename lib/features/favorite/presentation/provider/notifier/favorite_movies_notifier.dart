@@ -1,10 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../../core/domain/base/usecase/base_usecase.dart';
-import '../../../../movie/domain/entity/movie_details_entity.dart';
-import '../../../domain/usecase/add_movie_to_favorite_usecase.dart';
-import '../../../domain/usecase/remove_movie_from_favorite_usecase.dart';
-import '../injection/dependencies.dart';
+import '../../../../../lib.dart';
 
 part 'favorite_movies_notifier.g.dart';
 

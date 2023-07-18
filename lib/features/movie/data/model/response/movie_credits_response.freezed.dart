@@ -130,12 +130,11 @@ class __$$_MovieCreditsResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieCreditsResponse implements _MovieCreditsResponse {
   const _$_MovieCreditsResponse(
-      {@JsonKey(name: MovieCreditsJsonKey.id)
-          required this.id,
+      {@JsonKey(name: MovieCreditsJsonKey.id) required this.id,
       @JsonKey(name: MovieCreditsJsonKey.cast)
-          required final List<MovieCastResponse> cast,
+      required final List<MovieCastResponse> cast,
       @JsonKey(name: MovieCreditsJsonKey.crew)
-          required final List<MovieCrewResponse> crew})
+      required final List<MovieCrewResponse> crew})
       : _cast = cast,
         _crew = crew;
 
@@ -203,13 +202,11 @@ class _$_MovieCreditsResponse implements _MovieCreditsResponse {
 
 abstract class _MovieCreditsResponse implements MovieCreditsResponse {
   const factory _MovieCreditsResponse(
-          {@JsonKey(name: MovieCreditsJsonKey.id)
-              required final int id,
-          @JsonKey(name: MovieCreditsJsonKey.cast)
-              required final List<MovieCastResponse> cast,
-          @JsonKey(name: MovieCreditsJsonKey.crew)
-              required final List<MovieCrewResponse> crew}) =
-      _$_MovieCreditsResponse;
+      {@JsonKey(name: MovieCreditsJsonKey.id) required final int id,
+      @JsonKey(name: MovieCreditsJsonKey.cast)
+      required final List<MovieCastResponse> cast,
+      @JsonKey(name: MovieCreditsJsonKey.crew)
+      required final List<MovieCrewResponse> crew}) = _$_MovieCreditsResponse;
 
   factory _MovieCreditsResponse.fromJson(Map<String, dynamic> json) =
       _$_MovieCreditsResponse.fromJson;
@@ -273,30 +270,19 @@ abstract class $MovieCastResponseCopyWith<$Res> {
       _$MovieCastResponseCopyWithImpl<$Res, MovieCastResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          bool adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          int? gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieCreditsJsonKey.adult) bool adult,
+      @JsonKey(name: MovieCreditsJsonKey.gender) int? gender,
+      @JsonKey(name: MovieCreditsJsonKey.id) int id,
       @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
-          String knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          String name,
-      @JsonKey(name: MovieCreditsJsonKey.originalName)
-          String originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
-          double popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
-          String? profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.castId)
-          int castId,
-      @JsonKey(name: MovieCreditsJsonKey.character)
-          String character,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
-          String creditId,
-      @JsonKey(name: MovieCreditsJsonKey.order)
-          int order});
+      String knownForDepartment,
+      @JsonKey(name: MovieCreditsJsonKey.name) String name,
+      @JsonKey(name: MovieCreditsJsonKey.originalName) String originalName,
+      @JsonKey(name: MovieCreditsJsonKey.popularity) double popularity,
+      @JsonKey(name: MovieCreditsJsonKey.profilePath) String? profilePath,
+      @JsonKey(name: MovieCreditsJsonKey.castId) int castId,
+      @JsonKey(name: MovieCreditsJsonKey.character) String character,
+      @JsonKey(name: MovieCreditsJsonKey.creditId) String creditId,
+      @JsonKey(name: MovieCreditsJsonKey.order) int order});
 }
 
 /// @nodoc
@@ -387,30 +373,19 @@ abstract class _$$_MovieCastResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          bool adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          int? gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieCreditsJsonKey.adult) bool adult,
+      @JsonKey(name: MovieCreditsJsonKey.gender) int? gender,
+      @JsonKey(name: MovieCreditsJsonKey.id) int id,
       @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
-          String knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          String name,
-      @JsonKey(name: MovieCreditsJsonKey.originalName)
-          String originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
-          double popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
-          String? profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.castId)
-          int castId,
-      @JsonKey(name: MovieCreditsJsonKey.character)
-          String character,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
-          String creditId,
-      @JsonKey(name: MovieCreditsJsonKey.order)
-          int order});
+      String knownForDepartment,
+      @JsonKey(name: MovieCreditsJsonKey.name) String name,
+      @JsonKey(name: MovieCreditsJsonKey.originalName) String originalName,
+      @JsonKey(name: MovieCreditsJsonKey.popularity) double popularity,
+      @JsonKey(name: MovieCreditsJsonKey.profilePath) String? profilePath,
+      @JsonKey(name: MovieCreditsJsonKey.castId) int castId,
+      @JsonKey(name: MovieCreditsJsonKey.character) String character,
+      @JsonKey(name: MovieCreditsJsonKey.creditId) String creditId,
+      @JsonKey(name: MovieCreditsJsonKey.order) int order});
 }
 
 /// @nodoc
@@ -494,30 +469,20 @@ class __$$_MovieCastResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieCastResponse implements _MovieCastResponse {
   const _$_MovieCastResponse(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          required this.adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          required this.gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          required this.id,
+      {@JsonKey(name: MovieCreditsJsonKey.adult) required this.adult,
+      @JsonKey(name: MovieCreditsJsonKey.gender) required this.gender,
+      @JsonKey(name: MovieCreditsJsonKey.id) required this.id,
       @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
-          required this.knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          required this.name,
+      required this.knownForDepartment,
+      @JsonKey(name: MovieCreditsJsonKey.name) required this.name,
       @JsonKey(name: MovieCreditsJsonKey.originalName)
-          required this.originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
-          required this.popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
-          required this.profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.castId)
-          required this.castId,
-      @JsonKey(name: MovieCreditsJsonKey.character)
-          required this.character,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
-          required this.creditId,
-      @JsonKey(name: MovieCreditsJsonKey.order)
-          required this.order});
+      required this.originalName,
+      @JsonKey(name: MovieCreditsJsonKey.popularity) required this.popularity,
+      @JsonKey(name: MovieCreditsJsonKey.profilePath) required this.profilePath,
+      @JsonKey(name: MovieCreditsJsonKey.castId) required this.castId,
+      @JsonKey(name: MovieCreditsJsonKey.character) required this.character,
+      @JsonKey(name: MovieCreditsJsonKey.creditId) required this.creditId,
+      @JsonKey(name: MovieCreditsJsonKey.order) required this.order});
 
   factory _$_MovieCastResponse.fromJson(Map<String, dynamic> json) =>
       _$$_MovieCastResponseFromJson(json);
@@ -623,30 +588,25 @@ class _$_MovieCastResponse implements _MovieCastResponse {
 
 abstract class _MovieCastResponse implements MovieCastResponse {
   const factory _MovieCastResponse(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          required final bool adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          required final int? gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          required final int id,
-      @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
+          {@JsonKey(name: MovieCreditsJsonKey.adult) required final bool adult,
+          @JsonKey(name: MovieCreditsJsonKey.gender) required final int? gender,
+          @JsonKey(name: MovieCreditsJsonKey.id) required final int id,
+          @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
           required final String knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          required final String name,
-      @JsonKey(name: MovieCreditsJsonKey.originalName)
+          @JsonKey(name: MovieCreditsJsonKey.name) required final String name,
+          @JsonKey(name: MovieCreditsJsonKey.originalName)
           required final String originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
+          @JsonKey(name: MovieCreditsJsonKey.popularity)
           required final double popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
+          @JsonKey(name: MovieCreditsJsonKey.profilePath)
           required final String? profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.castId)
-          required final int castId,
-      @JsonKey(name: MovieCreditsJsonKey.character)
+          @JsonKey(name: MovieCreditsJsonKey.castId) required final int castId,
+          @JsonKey(name: MovieCreditsJsonKey.character)
           required final String character,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
+          @JsonKey(name: MovieCreditsJsonKey.creditId)
           required final String creditId,
-      @JsonKey(name: MovieCreditsJsonKey.order)
-          required final int order}) = _$_MovieCastResponse;
+          @JsonKey(name: MovieCreditsJsonKey.order) required final int order}) =
+      _$_MovieCastResponse;
 
   factory _MovieCastResponse.fromJson(Map<String, dynamic> json) =
       _$_MovieCastResponse.fromJson;
@@ -735,28 +695,18 @@ abstract class $MovieCrewResponseCopyWith<$Res> {
       _$MovieCrewResponseCopyWithImpl<$Res, MovieCrewResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          bool adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          int? gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieCreditsJsonKey.adult) bool adult,
+      @JsonKey(name: MovieCreditsJsonKey.gender) int? gender,
+      @JsonKey(name: MovieCreditsJsonKey.id) int id,
       @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
-          String knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          String name,
-      @JsonKey(name: MovieCreditsJsonKey.originalName)
-          String originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
-          double popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
-          String? profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
-          String creditId,
-      @JsonKey(name: MovieCreditsJsonKey.department)
-          String department,
-      @JsonKey(name: MovieCreditsJsonKey.job)
-          String job});
+      String knownForDepartment,
+      @JsonKey(name: MovieCreditsJsonKey.name) String name,
+      @JsonKey(name: MovieCreditsJsonKey.originalName) String originalName,
+      @JsonKey(name: MovieCreditsJsonKey.popularity) double popularity,
+      @JsonKey(name: MovieCreditsJsonKey.profilePath) String? profilePath,
+      @JsonKey(name: MovieCreditsJsonKey.creditId) String creditId,
+      @JsonKey(name: MovieCreditsJsonKey.department) String department,
+      @JsonKey(name: MovieCreditsJsonKey.job) String job});
 }
 
 /// @nodoc
@@ -842,28 +792,18 @@ abstract class _$$_MovieCrewResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          bool adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          int? gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieCreditsJsonKey.adult) bool adult,
+      @JsonKey(name: MovieCreditsJsonKey.gender) int? gender,
+      @JsonKey(name: MovieCreditsJsonKey.id) int id,
       @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
-          String knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          String name,
-      @JsonKey(name: MovieCreditsJsonKey.originalName)
-          String originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
-          double popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
-          String? profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
-          String creditId,
-      @JsonKey(name: MovieCreditsJsonKey.department)
-          String department,
-      @JsonKey(name: MovieCreditsJsonKey.job)
-          String job});
+      String knownForDepartment,
+      @JsonKey(name: MovieCreditsJsonKey.name) String name,
+      @JsonKey(name: MovieCreditsJsonKey.originalName) String originalName,
+      @JsonKey(name: MovieCreditsJsonKey.popularity) double popularity,
+      @JsonKey(name: MovieCreditsJsonKey.profilePath) String? profilePath,
+      @JsonKey(name: MovieCreditsJsonKey.creditId) String creditId,
+      @JsonKey(name: MovieCreditsJsonKey.department) String department,
+      @JsonKey(name: MovieCreditsJsonKey.job) String job});
 }
 
 /// @nodoc
@@ -942,28 +882,19 @@ class __$$_MovieCrewResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieCrewResponse implements _MovieCrewResponse {
   const _$_MovieCrewResponse(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          required this.adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          required this.gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          required this.id,
+      {@JsonKey(name: MovieCreditsJsonKey.adult) required this.adult,
+      @JsonKey(name: MovieCreditsJsonKey.gender) required this.gender,
+      @JsonKey(name: MovieCreditsJsonKey.id) required this.id,
       @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
-          required this.knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          required this.name,
+      required this.knownForDepartment,
+      @JsonKey(name: MovieCreditsJsonKey.name) required this.name,
       @JsonKey(name: MovieCreditsJsonKey.originalName)
-          required this.originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
-          required this.popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
-          required this.profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
-          required this.creditId,
-      @JsonKey(name: MovieCreditsJsonKey.department)
-          required this.department,
-      @JsonKey(name: MovieCreditsJsonKey.job)
-          required this.job});
+      required this.originalName,
+      @JsonKey(name: MovieCreditsJsonKey.popularity) required this.popularity,
+      @JsonKey(name: MovieCreditsJsonKey.profilePath) required this.profilePath,
+      @JsonKey(name: MovieCreditsJsonKey.creditId) required this.creditId,
+      @JsonKey(name: MovieCreditsJsonKey.department) required this.department,
+      @JsonKey(name: MovieCreditsJsonKey.job) required this.job});
 
   factory _$_MovieCrewResponse.fromJson(Map<String, dynamic> json) =>
       _$$_MovieCrewResponseFromJson(json);
@@ -1064,28 +995,24 @@ class _$_MovieCrewResponse implements _MovieCrewResponse {
 
 abstract class _MovieCrewResponse implements MovieCrewResponse {
   const factory _MovieCrewResponse(
-      {@JsonKey(name: MovieCreditsJsonKey.adult)
-          required final bool adult,
-      @JsonKey(name: MovieCreditsJsonKey.gender)
-          required final int? gender,
-      @JsonKey(name: MovieCreditsJsonKey.id)
-          required final int id,
-      @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
+          {@JsonKey(name: MovieCreditsJsonKey.adult) required final bool adult,
+          @JsonKey(name: MovieCreditsJsonKey.gender) required final int? gender,
+          @JsonKey(name: MovieCreditsJsonKey.id) required final int id,
+          @JsonKey(name: MovieCreditsJsonKey.knownForDepartment)
           required final String knownForDepartment,
-      @JsonKey(name: MovieCreditsJsonKey.name)
-          required final String name,
-      @JsonKey(name: MovieCreditsJsonKey.originalName)
+          @JsonKey(name: MovieCreditsJsonKey.name) required final String name,
+          @JsonKey(name: MovieCreditsJsonKey.originalName)
           required final String originalName,
-      @JsonKey(name: MovieCreditsJsonKey.popularity)
+          @JsonKey(name: MovieCreditsJsonKey.popularity)
           required final double popularity,
-      @JsonKey(name: MovieCreditsJsonKey.profilePath)
+          @JsonKey(name: MovieCreditsJsonKey.profilePath)
           required final String? profilePath,
-      @JsonKey(name: MovieCreditsJsonKey.creditId)
+          @JsonKey(name: MovieCreditsJsonKey.creditId)
           required final String creditId,
-      @JsonKey(name: MovieCreditsJsonKey.department)
+          @JsonKey(name: MovieCreditsJsonKey.department)
           required final String department,
-      @JsonKey(name: MovieCreditsJsonKey.job)
-          required final String job}) = _$_MovieCrewResponse;
+          @JsonKey(name: MovieCreditsJsonKey.job) required final String job}) =
+      _$_MovieCrewResponse;
 
   factory _MovieCrewResponse.fromJson(Map<String, dynamic> json) =
       _$_MovieCrewResponse.fromJson;

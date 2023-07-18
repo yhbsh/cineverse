@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_color.dart';
-import '../../provider/state/query_provider.dart';
+import '../../../../../lib.dart';
 
 class MovieSearchField extends HookConsumerWidget {
   const MovieSearchField({super.key});
@@ -28,7 +27,10 @@ class MovieSearchField extends HookConsumerWidget {
             hintStyle: TextStyle(color: focusNode.hasFocus ? AppColor.white : AppColor.grey),
             prefixIcon: Row(
               mainAxisSize: MainAxisSize.min,
-              children: [Icon(Icons.search, color: focusNode.hasFocus ? AppColor.white : AppColor.grey), const SizedBox(width: 8)],
+              children: [
+                Icon(Icons.search, color: focusNode.hasFocus ? AppColor.white : AppColor.grey),
+                const SizedBox(width: 8)
+              ],
             ),
           ),
           onChanged: (value) {

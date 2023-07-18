@@ -6,143 +6,170 @@ part of 'dependencies.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
-
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-String $moviesRemoteDataSourceHash() =>
+String _$moviesRemoteDataSourceHash() =>
     r'8e8c140890bfa72f5d8ff235a4a6e8fdc11c6600';
 
 /// See also [moviesRemoteDataSource].
-final moviesRemoteDataSourceProvider = Provider<IMoviesRemoteDatasource>(
+@ProviderFor(moviesRemoteDataSource)
+final moviesRemoteDataSourceProvider =
+    Provider<IMoviesRemoteDatasource>.internal(
   moviesRemoteDataSource,
   name: r'moviesRemoteDataSourceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $moviesRemoteDataSourceHash,
+      : _$moviesRemoteDataSourceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef MoviesRemoteDataSourceRef = ProviderRef<IMoviesRemoteDatasource>;
-String $moviesRepoHash() => r'7b6db9b9e672b94b1dd9d2ee6502f49dd2454795';
+String _$moviesRepoHash() => r'7b6db9b9e672b94b1dd9d2ee6502f49dd2454795';
 
 /// See also [moviesRepo].
-final moviesRepoProvider = Provider<IMoviesRepo>(
+@ProviderFor(moviesRepo)
+final moviesRepoProvider = Provider<IMoviesRepo>.internal(
   moviesRepo,
   name: r'moviesRepoProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $moviesRepoHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$moviesRepoHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef MoviesRepoRef = ProviderRef<IMoviesRepo>;
-String $fetchMoviesUseCaseHash() => r'7ef5015cd2352e16ac3d08ade26034c04aed8c97';
+String _$fetchMoviesUseCaseHash() =>
+    r'7ef5015cd2352e16ac3d08ade26034c04aed8c97';
 
 /// See also [fetchMoviesUseCase].
-final fetchMoviesUseCaseProvider = Provider<FetchMoviesUseCase>(
+@ProviderFor(fetchMoviesUseCase)
+final fetchMoviesUseCaseProvider = Provider<FetchMoviesUseCase>.internal(
   fetchMoviesUseCase,
   name: r'fetchMoviesUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchMoviesUseCaseHash,
+      : _$fetchMoviesUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchMoviesUseCaseRef = ProviderRef<FetchMoviesUseCase>;
-String $fetchSearchMoviesUseCaseHash() =>
+String _$fetchSearchMoviesUseCaseHash() =>
     r'c8e0dda08187cdbde0fc5d8e9143406e6e27c7a3';
 
 /// See also [fetchSearchMoviesUseCase].
-final fetchSearchMoviesUseCaseProvider = Provider<FetchSearchMoviesUseCase>(
+@ProviderFor(fetchSearchMoviesUseCase)
+final fetchSearchMoviesUseCaseProvider =
+    Provider<FetchSearchMoviesUseCase>.internal(
   fetchSearchMoviesUseCase,
   name: r'fetchSearchMoviesUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchSearchMoviesUseCaseHash,
+      : _$fetchSearchMoviesUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchSearchMoviesUseCaseRef = ProviderRef<FetchSearchMoviesUseCase>;
-String $fetchMovieDetailsUseCaseHash() =>
+String _$fetchMovieDetailsUseCaseHash() =>
     r'480b9cb224245ac109e94d64933becd61f77a281';
 
 /// See also [fetchMovieDetailsUseCase].
-final fetchMovieDetailsUseCaseProvider = Provider<FetchMovieDetailsUseCase>(
+@ProviderFor(fetchMovieDetailsUseCase)
+final fetchMovieDetailsUseCaseProvider =
+    Provider<FetchMovieDetailsUseCase>.internal(
   fetchMovieDetailsUseCase,
   name: r'fetchMovieDetailsUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchMovieDetailsUseCaseHash,
+      : _$fetchMovieDetailsUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchMovieDetailsUseCaseRef = ProviderRef<FetchMovieDetailsUseCase>;
-String $fetchMovieImagesUseCaseHash() =>
+String _$fetchMovieImagesUseCaseHash() =>
     r'e0223c6fc4cc6f11ac4ec86de1f150fdeb01583d';
 
 /// See also [fetchMovieImagesUseCase].
-final fetchMovieImagesUseCaseProvider = Provider<FetchMovieImagesUseCase>(
+@ProviderFor(fetchMovieImagesUseCase)
+final fetchMovieImagesUseCaseProvider =
+    Provider<FetchMovieImagesUseCase>.internal(
   fetchMovieImagesUseCase,
   name: r'fetchMovieImagesUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchMovieImagesUseCaseHash,
+      : _$fetchMovieImagesUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchMovieImagesUseCaseRef = ProviderRef<FetchMovieImagesUseCase>;
-String $fetchPosterImageUseCaseHash() =>
+String _$fetchPosterImageUseCaseHash() =>
     r'2692933b3ffc22b46b6ce68eebdc7ab360df8791';
 
 /// See also [fetchPosterImageUseCase].
-final fetchPosterImageUseCaseProvider = Provider<FetchPosterImageUseCase>(
+@ProviderFor(fetchPosterImageUseCase)
+final fetchPosterImageUseCaseProvider =
+    Provider<FetchPosterImageUseCase>.internal(
   fetchPosterImageUseCase,
   name: r'fetchPosterImageUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchPosterImageUseCaseHash,
+      : _$fetchPosterImageUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchPosterImageUseCaseRef = ProviderRef<FetchPosterImageUseCase>;
-String $fetchBackdropImageUseCaseHash() =>
+String _$fetchBackdropImageUseCaseHash() =>
     r'672813d847b585ecd98190cbaff158f94b7e70ef';
 
 /// See also [fetchBackdropImageUseCase].
-final fetchBackdropImageUseCaseProvider = Provider<FetchBackdropImageUseCase>(
+@ProviderFor(fetchBackdropImageUseCase)
+final fetchBackdropImageUseCaseProvider =
+    Provider<FetchBackdropImageUseCase>.internal(
   fetchBackdropImageUseCase,
   name: r'fetchBackdropImageUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchBackdropImageUseCaseHash,
+      : _$fetchBackdropImageUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchBackdropImageUseCaseRef = ProviderRef<FetchBackdropImageUseCase>;
-String $fetchMovieCreditsUseCaseHash() =>
+String _$fetchMovieCreditsUseCaseHash() =>
     r'e7801c3071a391a9d028ab565cc4a2f14aa2214a';
 
 /// See also [fetchMovieCreditsUseCase].
-final fetchMovieCreditsUseCaseProvider = Provider<FetchMovieCreditsUseCase>(
+@ProviderFor(fetchMovieCreditsUseCase)
+final fetchMovieCreditsUseCaseProvider =
+    Provider<FetchMovieCreditsUseCase>.internal(
   fetchMovieCreditsUseCase,
   name: r'fetchMovieCreditsUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchMovieCreditsUseCaseHash,
+      : _$fetchMovieCreditsUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchMovieCreditsUseCaseRef = ProviderRef<FetchMovieCreditsUseCase>;
-String $fetchMovieVideosUseCaseHash() =>
+String _$fetchMovieVideosUseCaseHash() =>
     r'08c4273edcf8abd1d5f1bc14590e3fdfa3ad3bd4';
 
 /// See also [fetchMovieVideosUseCase].
-final fetchMovieVideosUseCaseProvider = Provider<FetchMovieVideosUseCase>(
+@ProviderFor(fetchMovieVideosUseCase)
+final fetchMovieVideosUseCaseProvider =
+    Provider<FetchMovieVideosUseCase>.internal(
   fetchMovieVideosUseCase,
   name: r'fetchMovieVideosUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : $fetchMovieVideosUseCaseHash,
+      : _$fetchMovieVideosUseCaseHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
+
 typedef FetchMovieVideosUseCaseRef = ProviderRef<FetchMovieVideosUseCase>;
+// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

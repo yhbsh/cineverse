@@ -1,12 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../movie/domain/entity/movie_details_entity.dart';
-import '../../domain/entity/favorite_exception.dart';
-import '../../domain/entity/favorite_failure.dart';
-import '../../domain/repository/favorite_repository_interface.dart';
-import '../datasource/local_datasource.dart';
-import '../model/request/add_movie_to_favorite_request.dart';
-import '../model/request/remove_movie_from_favorite_request.dart';
+import '../../../../lib.dart';
 
 class FavoriteRepositoryImpl implements IFavoriteRepository {
   const FavoriteRepositoryImpl(this._localDataSource);

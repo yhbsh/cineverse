@@ -2,12 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 
-import '../../../features/movie/domain/entity/movie_details_entity.dart';
+import '../../../lib.dart';
 
 @immutable
 class AppConst {
   static const String apiKey = '66f9bfd5c55628c4552b1fa089c37130';
-  static const String apiToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NmY5YmZkNWM1NTYyOGM0NTUyYjFmYTA4OWMzNzEzMCIsInN1YiI6IjYzOWE3Njc3M2Q0M2UwMDBiYzU4YjRlNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qXUtT7-T_wC4ZxEhqABm2clsb-QhBQxjiDUTEbw0p2A';
+  static const String apiToken =
+      'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NmY5YmZkNWM1NTYyOGM0NTUyYjFmYTA4OWMzNzEzMCIsInN1YiI6IjYzOWE3Njc3M2Q0M2UwMDBiYzU4YjRlNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qXUtT7-T_wC4ZxEhqABm2clsb-QhBQxjiDUTEbw0p2A';
   static const String baseUrl = 'https://api.themoviedb.org/3';
   static const String basePosterUrl = 'https://image.tmdb.org/t/p/w500';
   static const String baseBackdropUrl = 'https://image.tmdb.org/t/p/w780';

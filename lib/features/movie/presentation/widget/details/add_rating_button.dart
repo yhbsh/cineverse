@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../domain/entity/movie_details_entity.dart';
+import '../../../../../lib.dart';
 
 class AddRatingButton extends HookConsumerWidget {
   const AddRatingButton({Key? key, required this.movieDetails}) : super(key: key);

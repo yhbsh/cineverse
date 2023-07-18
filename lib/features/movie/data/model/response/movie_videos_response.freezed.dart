@@ -38,10 +38,9 @@ abstract class $MovieVideosResponseCopyWith<$Res> {
       _$MovieVideosResponseCopyWithImpl<$Res, MovieVideosResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: MovieVideosJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieVideosJsonKey.id) int id,
       @JsonKey(name: MovieVideosJsonKey.results)
-          List<MovieVideoResponse> results});
+      List<MovieVideoResponse> results});
 }
 
 /// @nodoc
@@ -82,10 +81,9 @@ abstract class _$$_MovieVideosResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: MovieVideosJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieVideosJsonKey.id) int id,
       @JsonKey(name: MovieVideosJsonKey.results)
-          List<MovieVideoResponse> results});
+      List<MovieVideoResponse> results});
 }
 
 /// @nodoc
@@ -119,10 +117,9 @@ class __$$_MovieVideosResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieVideosResponse implements _MovieVideosResponse {
   const _$_MovieVideosResponse(
-      {@JsonKey(name: MovieVideosJsonKey.id)
-          required this.id,
+      {@JsonKey(name: MovieVideosJsonKey.id) required this.id,
       @JsonKey(name: MovieVideosJsonKey.results)
-          required final List<MovieVideoResponse> results})
+      required final List<MovieVideoResponse> results})
       : _results = results;
 
   factory _$_MovieVideosResponse.fromJson(Map<String, dynamic> json) =>
@@ -176,10 +173,9 @@ class _$_MovieVideosResponse implements _MovieVideosResponse {
 
 abstract class _MovieVideosResponse implements MovieVideosResponse {
   const factory _MovieVideosResponse(
-          {@JsonKey(name: MovieVideosJsonKey.id)
-              required final int id,
+          {@JsonKey(name: MovieVideosJsonKey.id) required final int id,
           @JsonKey(name: MovieVideosJsonKey.results)
-              required final List<MovieVideoResponse> results}) =
+          required final List<MovieVideoResponse> results}) =
       _$_MovieVideosResponse;
 
   factory _MovieVideosResponse.fromJson(Map<String, dynamic> json) =
@@ -502,26 +498,18 @@ class _$_MovieVideoResponse implements _MovieVideoResponse {
 
 abstract class _MovieVideoResponse implements MovieVideoResponse {
   const factory _MovieVideoResponse(
-      {@JsonKey(name: MovieVideoJsonKey.iso6391)
-          required final String iso6391,
-      @JsonKey(name: MovieVideoJsonKey.iso31661)
-          required final String iso31661,
-      @JsonKey(name: MovieVideoJsonKey.name)
-          required final String name,
-      @JsonKey(name: MovieVideoJsonKey.key)
-          required final String key,
-      @JsonKey(name: MovieVideoJsonKey.site)
-          required final String site,
-      @JsonKey(name: MovieVideoJsonKey.size)
-          required final int size,
-      @JsonKey(name: MovieVideoJsonKey.type)
-          required final String type,
-      @JsonKey(name: MovieVideoJsonKey.official)
-          required final bool official,
+      {@JsonKey(name: MovieVideoJsonKey.iso6391) required final String iso6391,
+      @JsonKey(name: MovieVideoJsonKey.iso31661) required final String iso31661,
+      @JsonKey(name: MovieVideoJsonKey.name) required final String name,
+      @JsonKey(name: MovieVideoJsonKey.key) required final String key,
+      @JsonKey(name: MovieVideoJsonKey.site) required final String site,
+      @JsonKey(name: MovieVideoJsonKey.size) required final int size,
+      @JsonKey(name: MovieVideoJsonKey.type) required final String type,
+      @JsonKey(name: MovieVideoJsonKey.official) required final bool official,
       @JsonKey(name: MovieVideoJsonKey.publishedAt)
-          required final String publishedAt,
+      required final String publishedAt,
       @JsonKey(name: MovieVideoJsonKey.id)
-          required final String id}) = _$_MovieVideoResponse;
+      required final String id}) = _$_MovieVideoResponse;
 
   factory _MovieVideoResponse.fromJson(Map<String, dynamic> json) =
       _$_MovieVideoResponse.fromJson;

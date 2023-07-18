@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 abstract class BaseException implements Exception {
-  final String message;
+  final String? message;
   final int? code;
 
   const BaseException({required this.message, this.code});

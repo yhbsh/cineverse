@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../../../favorite/presentation/widget/favorite_movie_card.dart';
-import '../../provider/future/fetch_movie_details.dart';
-import '../../provider/future/fetch_search_movies.dart';
-import '../../provider/state/query_provider.dart';
+import '../../../../../lib.dart';
 
 class SearchMoviesListView extends HookConsumerWidget {
   const SearchMoviesListView({super.key});
@@ -38,7 +34,8 @@ class SearchMoviesListView extends HookConsumerWidget {
                   orElse: () => null,
                   data: (moviesEntity) {
                     totalResultsNotifier.value = moviesEntity.totalResults;
-                    final movieDetails = ref.watch(fetchMovieDetailsProvider(id: moviesEntity.movies[itemIndexInPage].id));
+                    final movieDetails =
+                        ref.watch(fetchMovieDetailsProvider(id: moviesEntity.movies[itemIndexInPage].id));
 
                     return movieDetails.maybeWhen(
                       orElse: () => null,

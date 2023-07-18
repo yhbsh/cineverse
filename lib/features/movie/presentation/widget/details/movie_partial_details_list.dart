@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/entity/movie_details_entity.dart';
+import '../../../../../lib.dart';
 
 class MoviePartialDetailsListView extends StatelessWidget {
   const MoviePartialDetailsListView({Key? key, required this.movieDetails}) : super(key: key);

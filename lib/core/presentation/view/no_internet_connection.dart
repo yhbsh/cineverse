@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../resource/app_color.dart';
+import '../../../lib.dart';
 
 class NoInternetConnectionView extends HookConsumerWidget {
   const NoInternetConnectionView({super.key});

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../provider/future/fetch_movie_credits.dart';
+import '../../../../../lib.dart';
 
 class MovieCreditsList extends HookConsumerWidget {
   const MovieCreditsList({super.key, required this.id});
@@ -45,7 +44,8 @@ class MovieCreditsList extends HookConsumerWidget {
                                 if (loadingProgress == null) return child;
                                 return const CircularIndicator();
                               },
-                              errorBuilder: (context, error, stackTrace) => const Icon(Icons.person, color: Colors.white, size: 50),
+                              errorBuilder: (context, error, stackTrace) =>
+                                  const Icon(Icons.person, color: Colors.white, size: 50),
                             ),
                           ),
                   ),

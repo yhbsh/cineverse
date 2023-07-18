@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../../../core/presentation/resource/app_route_const.dart';
+import '../../../../lib.dart';
 
 class MovieVideoView extends HookConsumerWidget {
   const MovieVideoView({super.key, required this.videoKey});

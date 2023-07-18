@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_route_const.dart';
-import '../../constant/movies_enum.dart';
+import '../../../../../lib.dart';
 
 class MoviesTypeRow extends HookConsumerWidget {
   const MoviesTypeRow({Key? key, required this.type}) : super(key: key);
@@ -24,7 +23,10 @@ class MoviesTypeRow extends HookConsumerWidget {
             style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.2),
           ),
           TextButton(
-            onPressed: () => GoRouter.of(context).pushNamed(AppRouteName.allMovies, params: {'type': type.name}),
+            onPressed: () => GoRouter.of(context).pushNamed(
+              AppRouteName.allMovies,
+              pathParameters: {'type': type.name},
+            ),
             child: const Text(
               'See All',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.2),

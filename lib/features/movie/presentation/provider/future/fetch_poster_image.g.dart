@@ -6,7 +6,7 @@ part of 'fetch_poster_image.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$fetchPosterImageHash() => r'7f443e83583d8795edaea6429f688496de0c19d1';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,13 +29,56 @@ class _SystemHash {
   }
 }
 
-String $fetchPosterImageHash() => r'7f443e83583d8795edaea6429f688496de0c19d1';
+typedef FetchPosterImageRef = FutureProviderRef<Uint8List>;
+
+/// See also [fetchPosterImage].
+@ProviderFor(fetchPosterImage)
+const fetchPosterImageProvider = FetchPosterImageFamily();
+
+/// See also [fetchPosterImage].
+class FetchPosterImageFamily extends Family<AsyncValue<Uint8List>> {
+  /// See also [fetchPosterImage].
+  const FetchPosterImageFamily();
+
+  /// See also [fetchPosterImage].
+  FetchPosterImageProvider call({
+    required String? posterPath,
+  }) {
+    return FetchPosterImageProvider(
+      posterPath: posterPath,
+    );
+  }
+
+  @override
+  FetchPosterImageProvider getProviderOverride(
+    covariant FetchPosterImageProvider provider,
+  ) {
+    return call(
+      posterPath: provider.posterPath,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchPosterImageProvider';
+}
 
 /// See also [fetchPosterImage].
 class FetchPosterImageProvider extends FutureProvider<Uint8List> {
+  /// See also [fetchPosterImage].
   FetchPosterImageProvider({
     required this.posterPath,
-  }) : super(
+  }) : super.internal(
           (ref) => fetchPosterImage(
             ref,
             posterPath: posterPath,
@@ -45,7 +88,10 @@ class FetchPosterImageProvider extends FutureProvider<Uint8List> {
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $fetchPosterImageHash,
+                  : _$fetchPosterImageHash,
+          dependencies: FetchPosterImageFamily._dependencies,
+          allTransitiveDependencies:
+              FetchPosterImageFamily._allTransitiveDependencies,
         );
 
   final String? posterPath;
@@ -63,38 +109,4 @@ class FetchPosterImageProvider extends FutureProvider<Uint8List> {
     return _SystemHash.finish(hash);
   }
 }
-
-typedef FetchPosterImageRef = FutureProviderRef<Uint8List>;
-
-/// See also [fetchPosterImage].
-final fetchPosterImageProvider = FetchPosterImageFamily();
-
-class FetchPosterImageFamily extends Family<AsyncValue<Uint8List>> {
-  FetchPosterImageFamily();
-
-  FetchPosterImageProvider call({
-    required String? posterPath,
-  }) {
-    return FetchPosterImageProvider(
-      posterPath: posterPath,
-    );
-  }
-
-  @override
-  FutureProvider<Uint8List> getProviderOverride(
-    covariant FetchPosterImageProvider provider,
-  ) {
-    return call(
-      posterPath: provider.posterPath,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'fetchPosterImageProvider';
-}
+// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

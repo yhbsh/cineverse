@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/model/response/movie_details_response.dart';
+import '../../../../lib.dart';
 
 part 'movie_details_entity.freezed.dart';
 part 'movie_details_entity.g.dart';
@@ -46,12 +46,15 @@ class MovieDetailsEntity with _$MovieDetailsEntity {
       overview: response.overview,
       popularity: response.popularity,
       posterPath: response.posterPath,
-      productionCompanies: response.productionCompanies.map((company) => MovieProductionCompanyEntity.fromResponse(company)).toList(),
-      productionCountries: response.productionCountries.map((country) => MovieProductionCountryEntity.fromResponse(country)).toList(),
+      productionCompanies:
+          response.productionCompanies.map((company) => MovieProductionCompanyEntity.fromResponse(company)).toList(),
+      productionCountries:
+          response.productionCountries.map((country) => MovieProductionCountryEntity.fromResponse(country)).toList(),
       releaseDate: response.releaseDate,
       revenue: response.revenue,
       runtime: response.runtime,
-      spokenLanguages: response.spokenLanguages.map((language) => MovieSpokenLanguageEntity.fromResponse(language)).toList(),
+      spokenLanguages:
+          response.spokenLanguages.map((language) => MovieSpokenLanguageEntity.fromResponse(language)).toList(),
       status: response.status,
       tagline: response.tagline,
       title: response.title,
@@ -111,7 +114,8 @@ class MovieProductionCompanyEntity with _$MovieProductionCompanyEntity {
 
   const MovieProductionCompanyEntity._();
 
-  factory MovieProductionCompanyEntity.fromJson(Map<String, dynamic> json) => _$MovieProductionCompanyEntityFromJson(json);
+  factory MovieProductionCompanyEntity.fromJson(Map<String, dynamic> json) =>
+      _$MovieProductionCompanyEntityFromJson(json);
 
   factory MovieProductionCompanyEntity.fromResponse(MovieProductionCompanyResponse response) {
     return MovieProductionCompanyEntity(
@@ -132,7 +136,8 @@ class MovieProductionCountryEntity with _$MovieProductionCountryEntity {
 
   const MovieProductionCountryEntity._();
 
-  factory MovieProductionCountryEntity.fromJson(Map<String, dynamic> json) => _$MovieProductionCountryEntityFromJson(json);
+  factory MovieProductionCountryEntity.fromJson(Map<String, dynamic> json) =>
+      _$MovieProductionCountryEntityFromJson(json);
 
   factory MovieProductionCountryEntity.fromResponse(MovieProductionCountryResponse response) {
     return MovieProductionCountryEntity(

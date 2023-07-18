@@ -280,34 +280,21 @@ class __$$_MovieCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Movie extends _Movie {
   const _$_Movie(
-      {@JsonKey(name: MovieJsonKey.posterPath)
-          required this.posterPath,
-      @JsonKey(name: MovieJsonKey.adult)
-          required this.adult,
-      @JsonKey(name: MovieJsonKey.overview)
-          required this.overview,
-      @JsonKey(name: MovieJsonKey.releaseDate)
-          required this.releaseDate,
-      @JsonKey(name: MovieJsonKey.genreIds)
-          required final List<int> genreIds,
-      @JsonKey(name: MovieJsonKey.id)
-          required this.id,
-      @JsonKey(name: MovieJsonKey.originalTitle)
-          required this.originalTitle,
+      {@JsonKey(name: MovieJsonKey.posterPath) required this.posterPath,
+      @JsonKey(name: MovieJsonKey.adult) required this.adult,
+      @JsonKey(name: MovieJsonKey.overview) required this.overview,
+      @JsonKey(name: MovieJsonKey.releaseDate) required this.releaseDate,
+      @JsonKey(name: MovieJsonKey.genreIds) required final List<int> genreIds,
+      @JsonKey(name: MovieJsonKey.id) required this.id,
+      @JsonKey(name: MovieJsonKey.originalTitle) required this.originalTitle,
       @JsonKey(name: MovieJsonKey.originalLanguage)
-          required this.originalLanguage,
-      @JsonKey(name: MovieJsonKey.title)
-          required this.title,
-      @JsonKey(name: MovieJsonKey.backdropPath)
-          required this.backdropPath,
-      @JsonKey(name: MovieJsonKey.popularity)
-          required this.popularity,
-      @JsonKey(name: MovieJsonKey.voteCount)
-          required this.voteCount,
-      @JsonKey(name: MovieJsonKey.video)
-          required this.video,
-      @JsonKey(name: MovieJsonKey.voteAverage)
-          required this.voteAverage})
+      required this.originalLanguage,
+      @JsonKey(name: MovieJsonKey.title) required this.title,
+      @JsonKey(name: MovieJsonKey.backdropPath) required this.backdropPath,
+      @JsonKey(name: MovieJsonKey.popularity) required this.popularity,
+      @JsonKey(name: MovieJsonKey.voteCount) required this.voteCount,
+      @JsonKey(name: MovieJsonKey.video) required this.video,
+      @JsonKey(name: MovieJsonKey.voteAverage) required this.voteAverage})
       : _genreIds = genreIds,
         super._();
 
@@ -434,33 +421,25 @@ class _$_Movie extends _Movie {
 abstract class _Movie extends MovieResponse {
   const factory _Movie(
       {@JsonKey(name: MovieJsonKey.posterPath)
-          required final String? posterPath,
-      @JsonKey(name: MovieJsonKey.adult)
-          required final bool adult,
-      @JsonKey(name: MovieJsonKey.overview)
-          required final String overview,
+      required final String? posterPath,
+      @JsonKey(name: MovieJsonKey.adult) required final bool adult,
+      @JsonKey(name: MovieJsonKey.overview) required final String overview,
       @JsonKey(name: MovieJsonKey.releaseDate)
-          required final String releaseDate,
-      @JsonKey(name: MovieJsonKey.genreIds)
-          required final List<int> genreIds,
-      @JsonKey(name: MovieJsonKey.id)
-          required final int id,
+      required final String releaseDate,
+      @JsonKey(name: MovieJsonKey.genreIds) required final List<int> genreIds,
+      @JsonKey(name: MovieJsonKey.id) required final int id,
       @JsonKey(name: MovieJsonKey.originalTitle)
-          required final String originalTitle,
+      required final String originalTitle,
       @JsonKey(name: MovieJsonKey.originalLanguage)
-          required final String originalLanguage,
-      @JsonKey(name: MovieJsonKey.title)
-          required final String title,
+      required final String originalLanguage,
+      @JsonKey(name: MovieJsonKey.title) required final String title,
       @JsonKey(name: MovieJsonKey.backdropPath)
-          required final String? backdropPath,
-      @JsonKey(name: MovieJsonKey.popularity)
-          required final double popularity,
-      @JsonKey(name: MovieJsonKey.voteCount)
-          required final int voteCount,
-      @JsonKey(name: MovieJsonKey.video)
-          required final bool video,
+      required final String? backdropPath,
+      @JsonKey(name: MovieJsonKey.popularity) required final double popularity,
+      @JsonKey(name: MovieJsonKey.voteCount) required final int voteCount,
+      @JsonKey(name: MovieJsonKey.video) required final bool video,
       @JsonKey(name: MovieJsonKey.voteAverage)
-          required final double voteAverage}) = _$_Movie;
+      required final double voteAverage}) = _$_Movie;
   const _Movie._() : super._();
 
   factory _Movie.fromJson(Map<String, dynamic> json) = _$_Movie.fromJson;
@@ -642,14 +621,11 @@ class __$$_MoviesResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MoviesResponse extends _MoviesResponse {
   const _$_MoviesResponse(
-      {@JsonKey(name: MoviesJsonKey.page)
-          required this.page,
+      {@JsonKey(name: MoviesJsonKey.page) required this.page,
       @JsonKey(name: MoviesJsonKey.results)
-          required final List<MovieResponse> results,
-      @JsonKey(name: MoviesJsonKey.totalPages)
-          required this.totalPages,
-      @JsonKey(name: MoviesJsonKey.totalResults)
-          required this.totalResults})
+      required final List<MovieResponse> results,
+      @JsonKey(name: MoviesJsonKey.totalPages) required this.totalPages,
+      @JsonKey(name: MoviesJsonKey.totalResults) required this.totalResults})
       : _results = results,
         super._();
 
@@ -714,14 +690,12 @@ class _$_MoviesResponse extends _MoviesResponse {
 
 abstract class _MoviesResponse extends MoviesResponse {
   const factory _MoviesResponse(
-      {@JsonKey(name: MoviesJsonKey.page)
-          required final int page,
+      {@JsonKey(name: MoviesJsonKey.page) required final int page,
       @JsonKey(name: MoviesJsonKey.results)
-          required final List<MovieResponse> results,
-      @JsonKey(name: MoviesJsonKey.totalPages)
-          required final int totalPages,
+      required final List<MovieResponse> results,
+      @JsonKey(name: MoviesJsonKey.totalPages) required final int totalPages,
       @JsonKey(name: MoviesJsonKey.totalResults)
-          required final int totalResults}) = _$_MoviesResponse;
+      required final int totalResults}) = _$_MoviesResponse;
   const _MoviesResponse._() : super._();
 
   factory _MoviesResponse.fromJson(Map<String, dynamic> json) =

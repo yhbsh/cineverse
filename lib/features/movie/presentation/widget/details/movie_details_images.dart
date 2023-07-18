@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_color.dart';
-import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../../domain/entity/movie_details_entity.dart';
-import '../../provider/future/fetch_backdrop_image.dart';
-import 'add_rating_button.dart';
-import 'movie_backdrop_image.dart';
-import 'movie_poster_image.dart';
+import '../../../../../lib.dart';
 
 class MovieDetailsImages extends HookConsumerWidget {
   const MovieDetailsImages({Key? key, required this.movieDetails}) : super(key: key);

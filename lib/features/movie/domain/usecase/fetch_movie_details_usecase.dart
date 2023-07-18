@@ -1,11 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/domain/base/usecase/base_usecase.dart';
-import '../../data/model/request/fetch_movie_details_request.dart';
-import '../entity/movie_details_entity.dart';
-import '../entity/movie_failure.dart';
-import '../repository/movie_repository_interface.dart';
+import '../../../../lib.dart';
 
 @immutable
 class FetchMovieDetailsUseCase extends BaseUseCase<FetchMovieDetailsUseCaseInput, MovieDetailsEntity, MovieFailure> {

@@ -6,7 +6,8 @@ part of 'fetch_backdrop_image.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$fetchBackdropImageHash() =>
+    r'fe86ed2bb10cbeb4863225341772162190e4c01d';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,13 +30,56 @@ class _SystemHash {
   }
 }
 
-String $fetchBackdropImageHash() => r'fe86ed2bb10cbeb4863225341772162190e4c01d';
+typedef FetchBackdropImageRef = FutureProviderRef<Uint8List>;
+
+/// See also [fetchBackdropImage].
+@ProviderFor(fetchBackdropImage)
+const fetchBackdropImageProvider = FetchBackdropImageFamily();
+
+/// See also [fetchBackdropImage].
+class FetchBackdropImageFamily extends Family<AsyncValue<Uint8List>> {
+  /// See also [fetchBackdropImage].
+  const FetchBackdropImageFamily();
+
+  /// See also [fetchBackdropImage].
+  FetchBackdropImageProvider call({
+    required String? backdropPath,
+  }) {
+    return FetchBackdropImageProvider(
+      backdropPath: backdropPath,
+    );
+  }
+
+  @override
+  FetchBackdropImageProvider getProviderOverride(
+    covariant FetchBackdropImageProvider provider,
+  ) {
+    return call(
+      backdropPath: provider.backdropPath,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchBackdropImageProvider';
+}
 
 /// See also [fetchBackdropImage].
 class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
+  /// See also [fetchBackdropImage].
   FetchBackdropImageProvider({
     required this.backdropPath,
-  }) : super(
+  }) : super.internal(
           (ref) => fetchBackdropImage(
             ref,
             backdropPath: backdropPath,
@@ -45,7 +89,10 @@ class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $fetchBackdropImageHash,
+                  : _$fetchBackdropImageHash,
+          dependencies: FetchBackdropImageFamily._dependencies,
+          allTransitiveDependencies:
+              FetchBackdropImageFamily._allTransitiveDependencies,
         );
 
   final String? backdropPath;
@@ -64,38 +111,4 @@ class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
     return _SystemHash.finish(hash);
   }
 }
-
-typedef FetchBackdropImageRef = FutureProviderRef<Uint8List>;
-
-/// See also [fetchBackdropImage].
-final fetchBackdropImageProvider = FetchBackdropImageFamily();
-
-class FetchBackdropImageFamily extends Family<AsyncValue<Uint8List>> {
-  FetchBackdropImageFamily();
-
-  FetchBackdropImageProvider call({
-    required String? backdropPath,
-  }) {
-    return FetchBackdropImageProvider(
-      backdropPath: backdropPath,
-    );
-  }
-
-  @override
-  FutureProvider<Uint8List> getProviderOverride(
-    covariant FetchBackdropImageProvider provider,
-  ) {
-    return call(
-      backdropPath: provider.backdropPath,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'fetchBackdropImageProvider';
-}
+// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

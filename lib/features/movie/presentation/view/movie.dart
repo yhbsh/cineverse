@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/presentation/provider/stream/network_provider.dart';
-import '../../../../core/presentation/view/no_internet_connection.dart';
-import '../../../../core/presentation/widget/circular_indicator.dart';
-import '../constant/movies_enum.dart';
-import '../provider/state/query_provider.dart';
-import '../widget/carousel/top_rated_carousel.dart';
-import '../widget/genre/genres_list_view.dart';
-import '../widget/movie/movie_search_field_button.dart';
-import '../widget/movie/movies_list_view.dart';
-import '../widget/movie/movies_type_row.dart';
+import '../../../../lib.dart';
 
 class MoviesView extends HookConsumerWidget {
   const MoviesView({super.key});

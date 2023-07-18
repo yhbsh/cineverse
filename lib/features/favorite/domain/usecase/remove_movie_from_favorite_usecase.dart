@@ -1,10 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/domain/base/usecase/base_usecase.dart';
-import '../../data/model/request/remove_movie_from_favorite_request.dart';
-import '../entity/favorite_failure.dart';
-import '../repository/favorite_repository_interface.dart';
+import '../../../../lib.dart';
 
 class RemoveMovieFromFavoriteUseCase extends BaseUseCase<RemoveMovieFromFavoriteUseCaseInput, Unit, FavoriteFailure> {
   const RemoveMovieFromFavoriteUseCase(this._repo);

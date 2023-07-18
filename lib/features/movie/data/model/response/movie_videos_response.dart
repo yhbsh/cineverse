@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../presentation/constant/movie_videos_json_key.dart';
+import '../../../../../lib.dart';
 
 part 'movie_videos_response.freezed.dart';
 part 'movie_videos_response.g.dart';

@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_color.dart';
-import '../../../../../core/presentation/resource/app_route_const.dart';
-import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../../domain/entity/movies_entity.dart';
-import '../../provider/future/fetch_movie_images.dart';
-import '../../provider/future/fetch_poster_image.dart';
+import '../../../../../lib.dart';
 
 class MovieCard extends HookConsumerWidget {
   const MovieCard({Key? key, required this.movie}) : super(key: key);
@@ -19,7 +14,7 @@ class MovieCard extends HookConsumerWidget {
     final movieImagesAsyncValue = ref.watch(fetchMovieImagesProvider(id: movie.id));
 
     return GestureDetector(
-      onTap: () => GoRouter.of(context).pushNamed(AppRouteName.movieDetails, params: {'id': '${movie.id}'}),
+      onTap: () => GoRouter.of(context).pushNamed(AppRouteName.movieDetails, pathParameters: {'id': '${movie.id}'}),
       child: movieImagesAsyncValue.maybeWhen(
         orElse: () => const AspectRatio(
           aspectRatio: 0.67,

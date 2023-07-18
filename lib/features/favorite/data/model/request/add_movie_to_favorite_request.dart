@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../movie/domain/entity/movie_details_entity.dart';
+import '../../../../../lib.dart';
 
 @immutable
 class AddMovieToFavoriteRequest {

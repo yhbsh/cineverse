@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/presentation/provider/stream/network_provider.dart';
-import '../../../../core/presentation/view/no_internet_connection.dart';
-import '../../../../core/presentation/widget/circular_indicator.dart';
-import '../widget/movie/movie_search_field.dart';
-import '../widget/movie/search_movies_list_view.dart';
+import '../../../../lib.dart';
 
 class MovieSearchView extends HookConsumerWidget {
   const MovieSearchView({super.key});
@@ -20,8 +16,8 @@ class MovieSearchView extends HookConsumerWidget {
 
         return Scaffold(
           appBar: AppBar(title: const Text('Search')),
-          body: Column(
-            children: const [MovieSearchField(), SearchMoviesListView()],
+          body: const Column(
+            children: [MovieSearchField(), SearchMoviesListView()],
           ),
         );
       },

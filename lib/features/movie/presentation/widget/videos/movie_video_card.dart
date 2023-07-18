@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_const.dart';
-import '../../../../../core/presentation/resource/app_route_const.dart';
-import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../../domain/entity/movie_videos_entity.dart';
+import '../../../../../lib.dart';
 
 class MovieVideoCard extends HookConsumerWidget {
   const MovieVideoCard({super.key, required this.videoEntity, required this.movieId});
@@ -16,7 +13,7 @@ class MovieVideoCard extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).goNamed(AppRouteName.video, params: {'key': videoEntity.key}),
+      onTap: () => GoRouter.of(context).goNamed(AppRouteName.video, pathParameters: {'key': videoEntity.key}),
       child: Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),

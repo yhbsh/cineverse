@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../presentation/resource/app_color.dart';
-import '../presentation/route/router.dart';
+import '../../lib.dart';
 
 class MoviesApp extends HookConsumerWidget {
   const MoviesApp({super.key});
@@ -13,7 +12,6 @@ class MoviesApp extends HookConsumerWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // brightness: Brightness.dark,
         fontFamily: GoogleFonts.openSans().fontFamily,
         scaffoldBackgroundColor: AppColor.background,
         appBarTheme: const AppBarTheme(

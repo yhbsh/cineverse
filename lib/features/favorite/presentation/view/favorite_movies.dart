@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../widget/favorite_movie_search_field.dart';
-import '../widget/favorite_movies_list.dart';
+import '../../../../lib.dart';
 
 class FavoriteMoviesView extends HookConsumerWidget {
   const FavoriteMoviesView({super.key});
@@ -10,7 +9,7 @@ class FavoriteMoviesView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: const Text('Favorite')),
-      body: Column(children: const [FavoriteMovieSearchField(), FavoriteMoviesListView()]),
+      body: const Column(children: [FavoriteMovieSearchField(), FavoriteMoviesListView()]),
     );
   }
 }

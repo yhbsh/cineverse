@@ -6,7 +6,7 @@ part of 'fetch_search_movies.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$searchMoviesHash() => r'3a7351654ed087b27ddf23df2cc7b0c4450e6d34';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,15 +29,64 @@ class _SystemHash {
   }
 }
 
-String $searchMoviesHash() => r'3a7351654ed087b27ddf23df2cc7b0c4450e6d34';
+typedef SearchMoviesRef = FutureProviderRef<MoviesEntity>;
+
+/// See also [searchMovies].
+@ProviderFor(searchMovies)
+const searchMoviesProvider = SearchMoviesFamily();
+
+/// See also [searchMovies].
+class SearchMoviesFamily extends Family<AsyncValue<MoviesEntity>> {
+  /// See also [searchMovies].
+  const SearchMoviesFamily();
+
+  /// See also [searchMovies].
+  SearchMoviesProvider call({
+    required String query,
+    required int page,
+    bool includeAdult = false,
+  }) {
+    return SearchMoviesProvider(
+      query: query,
+      page: page,
+      includeAdult: includeAdult,
+    );
+  }
+
+  @override
+  SearchMoviesProvider getProviderOverride(
+    covariant SearchMoviesProvider provider,
+  ) {
+    return call(
+      query: provider.query,
+      page: provider.page,
+      includeAdult: provider.includeAdult,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'searchMoviesProvider';
+}
 
 /// See also [searchMovies].
 class SearchMoviesProvider extends FutureProvider<MoviesEntity> {
+  /// See also [searchMovies].
   SearchMoviesProvider({
     required this.query,
     required this.page,
     this.includeAdult = false,
-  }) : super(
+  }) : super.internal(
           (ref) => searchMovies(
             ref,
             query: query,
@@ -49,7 +98,10 @@ class SearchMoviesProvider extends FutureProvider<MoviesEntity> {
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $searchMoviesHash,
+                  : _$searchMoviesHash,
+          dependencies: SearchMoviesFamily._dependencies,
+          allTransitiveDependencies:
+              SearchMoviesFamily._allTransitiveDependencies,
         );
 
   final String query;
@@ -74,44 +126,4 @@ class SearchMoviesProvider extends FutureProvider<MoviesEntity> {
     return _SystemHash.finish(hash);
   }
 }
-
-typedef SearchMoviesRef = FutureProviderRef<MoviesEntity>;
-
-/// See also [searchMovies].
-final searchMoviesProvider = SearchMoviesFamily();
-
-class SearchMoviesFamily extends Family<AsyncValue<MoviesEntity>> {
-  SearchMoviesFamily();
-
-  SearchMoviesProvider call({
-    required String query,
-    required int page,
-    bool includeAdult = false,
-  }) {
-    return SearchMoviesProvider(
-      query: query,
-      page: page,
-      includeAdult: includeAdult,
-    );
-  }
-
-  @override
-  FutureProvider<MoviesEntity> getProviderOverride(
-    covariant SearchMoviesProvider provider,
-  ) {
-    return call(
-      query: provider.query,
-      page: provider.page,
-      includeAdult: provider.includeAdult,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'searchMoviesProvider';
-}
+// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

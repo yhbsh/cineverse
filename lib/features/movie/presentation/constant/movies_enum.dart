@@ -1,5 +1,4 @@
-import 'movie_videos_json_key.dart';
-import 'movies_json_key.dart';
+import '../../../../lib.dart';
 
 enum MoviesType { upcoming, trending, nowPlaying, popular, topRated }
 

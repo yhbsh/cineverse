@@ -13,7 +13,8 @@ class MovieBackdropImage extends HookConsumerWidget {
     return Container(
       width: size.width,
       height: size.height * 0.4,
-      decoration: const BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20))),
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20))),
       child: ClipRRect(
         borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
         child: Image.memory(backdrop, fit: BoxFit.cover, filterQuality: FilterQuality.high),

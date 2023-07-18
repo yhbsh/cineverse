@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/model/response/movies_response.dart';
+import '../../../../lib.dart';
 
 part "movies_entity.freezed.dart";
 

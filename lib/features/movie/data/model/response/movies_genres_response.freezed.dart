@@ -103,7 +103,7 @@ class __$$_MoviesGenresResponseCopyWithImpl<$Res>
 class _$_MoviesGenresResponse implements _MoviesGenresResponse {
   const _$_MoviesGenresResponse(
       {@JsonKey(name: MovieJsonKey.genres)
-          required final List<MovieGenreResponse> genres})
+      required final List<MovieGenreResponse> genres})
       : _genres = genres;
 
   factory _$_MoviesGenresResponse.fromJson(Map<String, dynamic> json) =>
@@ -154,7 +154,7 @@ class _$_MoviesGenresResponse implements _MoviesGenresResponse {
 abstract class _MoviesGenresResponse implements MoviesGenresResponse {
   const factory _MoviesGenresResponse(
           {@JsonKey(name: MovieJsonKey.genres)
-              required final List<MovieGenreResponse> genres}) =
+          required final List<MovieGenreResponse> genres}) =
       _$_MoviesGenresResponse;
 
   factory _MoviesGenresResponse.fromJson(Map<String, dynamic> json) =

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../presentation/constant/movie_credits_json_key.dart';
+import '../../../../../lib.dart';
 
 part "movie_credits_response.freezed.dart";
 part 'movie_credits_response.g.dart';

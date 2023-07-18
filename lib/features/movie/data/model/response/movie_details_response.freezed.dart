@@ -88,56 +88,35 @@ abstract class $MovieDetailsResponseCopyWith<$Res> {
       _$MovieDetailsResponseCopyWithImpl<$Res, MovieDetailsResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: MovieJsonKey.adult)
-          bool adult,
-      @JsonKey(name: MovieJsonKey.backdropPath)
-          String? backdropPath,
+      {@JsonKey(name: MovieJsonKey.adult) bool adult,
+      @JsonKey(name: MovieJsonKey.backdropPath) String? backdropPath,
       @JsonKey(name: MovieJsonKey.belongsToCollection)
-          CollectionResponse? belongsToCollection,
-      @JsonKey(name: MovieJsonKey.budget)
-          int budget,
-      @JsonKey(name: MovieJsonKey.genres)
-          List<MovieGenreResponse> genres,
-      @JsonKey(name: MovieJsonKey.homepage)
-          String? homepage,
-      @JsonKey(name: MovieJsonKey.id)
-          int id,
-      @JsonKey(name: MovieJsonKey.imdbId)
-          String? imdbId,
-      @JsonKey(name: MovieJsonKey.originalLanguage)
-          String originalLanguage,
-      @JsonKey(name: MovieJsonKey.originalTitle)
-          String originalTitle,
-      @JsonKey(name: MovieJsonKey.overview)
-          String? overview,
-      @JsonKey(name: MovieJsonKey.popularity)
-          double popularity,
-      @JsonKey(name: MovieJsonKey.posterPath)
-          String? posterPath,
+      CollectionResponse? belongsToCollection,
+      @JsonKey(name: MovieJsonKey.budget) int budget,
+      @JsonKey(name: MovieJsonKey.genres) List<MovieGenreResponse> genres,
+      @JsonKey(name: MovieJsonKey.homepage) String? homepage,
+      @JsonKey(name: MovieJsonKey.id) int id,
+      @JsonKey(name: MovieJsonKey.imdbId) String? imdbId,
+      @JsonKey(name: MovieJsonKey.originalLanguage) String originalLanguage,
+      @JsonKey(name: MovieJsonKey.originalTitle) String originalTitle,
+      @JsonKey(name: MovieJsonKey.overview) String? overview,
+      @JsonKey(name: MovieJsonKey.popularity) double popularity,
+      @JsonKey(name: MovieJsonKey.posterPath) String? posterPath,
       @JsonKey(name: MovieJsonKey.productionCompanies)
-          List<MovieProductionCompanyResponse> productionCompanies,
+      List<MovieProductionCompanyResponse> productionCompanies,
       @JsonKey(name: MovieJsonKey.productionCountries)
-          List<MovieProductionCountryResponse> productionCountries,
-      @JsonKey(name: MovieJsonKey.releaseDate)
-          String releaseDate,
-      @JsonKey(name: MovieJsonKey.revenue)
-          int revenue,
-      @JsonKey(name: MovieJsonKey.runtime)
-          int? runtime,
+      List<MovieProductionCountryResponse> productionCountries,
+      @JsonKey(name: MovieJsonKey.releaseDate) String releaseDate,
+      @JsonKey(name: MovieJsonKey.revenue) int revenue,
+      @JsonKey(name: MovieJsonKey.runtime) int? runtime,
       @JsonKey(name: MovieJsonKey.spokenLanguages)
-          List<MovieSpokenLanguageResponse> spokenLanguages,
-      @JsonKey(name: MovieJsonKey.status)
-          String status,
-      @JsonKey(name: MovieJsonKey.tagline)
-          String? tagline,
-      @JsonKey(name: MovieJsonKey.title)
-          String title,
-      @JsonKey(name: MovieJsonKey.video)
-          bool video,
-      @JsonKey(name: MovieJsonKey.voteAverage)
-          double voteAverage,
-      @JsonKey(name: MovieJsonKey.voteCount)
-          int voteCount});
+      List<MovieSpokenLanguageResponse> spokenLanguages,
+      @JsonKey(name: MovieJsonKey.status) String status,
+      @JsonKey(name: MovieJsonKey.tagline) String? tagline,
+      @JsonKey(name: MovieJsonKey.title) String title,
+      @JsonKey(name: MovieJsonKey.video) bool video,
+      @JsonKey(name: MovieJsonKey.voteAverage) double voteAverage,
+      @JsonKey(name: MovieJsonKey.voteCount) int voteCount});
 
   $CollectionResponseCopyWith<$Res>? get belongsToCollection;
 }
@@ -309,56 +288,35 @@ abstract class _$$_MovieDetailsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: MovieJsonKey.adult)
-          bool adult,
-      @JsonKey(name: MovieJsonKey.backdropPath)
-          String? backdropPath,
+      {@JsonKey(name: MovieJsonKey.adult) bool adult,
+      @JsonKey(name: MovieJsonKey.backdropPath) String? backdropPath,
       @JsonKey(name: MovieJsonKey.belongsToCollection)
-          CollectionResponse? belongsToCollection,
-      @JsonKey(name: MovieJsonKey.budget)
-          int budget,
-      @JsonKey(name: MovieJsonKey.genres)
-          List<MovieGenreResponse> genres,
-      @JsonKey(name: MovieJsonKey.homepage)
-          String? homepage,
-      @JsonKey(name: MovieJsonKey.id)
-          int id,
-      @JsonKey(name: MovieJsonKey.imdbId)
-          String? imdbId,
-      @JsonKey(name: MovieJsonKey.originalLanguage)
-          String originalLanguage,
-      @JsonKey(name: MovieJsonKey.originalTitle)
-          String originalTitle,
-      @JsonKey(name: MovieJsonKey.overview)
-          String? overview,
-      @JsonKey(name: MovieJsonKey.popularity)
-          double popularity,
-      @JsonKey(name: MovieJsonKey.posterPath)
-          String? posterPath,
+      CollectionResponse? belongsToCollection,
+      @JsonKey(name: MovieJsonKey.budget) int budget,
+      @JsonKey(name: MovieJsonKey.genres) List<MovieGenreResponse> genres,
+      @JsonKey(name: MovieJsonKey.homepage) String? homepage,
+      @JsonKey(name: MovieJsonKey.id) int id,
+      @JsonKey(name: MovieJsonKey.imdbId) String? imdbId,
+      @JsonKey(name: MovieJsonKey.originalLanguage) String originalLanguage,
+      @JsonKey(name: MovieJsonKey.originalTitle) String originalTitle,
+      @JsonKey(name: MovieJsonKey.overview) String? overview,
+      @JsonKey(name: MovieJsonKey.popularity) double popularity,
+      @JsonKey(name: MovieJsonKey.posterPath) String? posterPath,
       @JsonKey(name: MovieJsonKey.productionCompanies)
-          List<MovieProductionCompanyResponse> productionCompanies,
+      List<MovieProductionCompanyResponse> productionCompanies,
       @JsonKey(name: MovieJsonKey.productionCountries)
-          List<MovieProductionCountryResponse> productionCountries,
-      @JsonKey(name: MovieJsonKey.releaseDate)
-          String releaseDate,
-      @JsonKey(name: MovieJsonKey.revenue)
-          int revenue,
-      @JsonKey(name: MovieJsonKey.runtime)
-          int? runtime,
+      List<MovieProductionCountryResponse> productionCountries,
+      @JsonKey(name: MovieJsonKey.releaseDate) String releaseDate,
+      @JsonKey(name: MovieJsonKey.revenue) int revenue,
+      @JsonKey(name: MovieJsonKey.runtime) int? runtime,
       @JsonKey(name: MovieJsonKey.spokenLanguages)
-          List<MovieSpokenLanguageResponse> spokenLanguages,
-      @JsonKey(name: MovieJsonKey.status)
-          String status,
-      @JsonKey(name: MovieJsonKey.tagline)
-          String? tagline,
-      @JsonKey(name: MovieJsonKey.title)
-          String title,
-      @JsonKey(name: MovieJsonKey.video)
-          bool video,
-      @JsonKey(name: MovieJsonKey.voteAverage)
-          double voteAverage,
-      @JsonKey(name: MovieJsonKey.voteCount)
-          int voteCount});
+      List<MovieSpokenLanguageResponse> spokenLanguages,
+      @JsonKey(name: MovieJsonKey.status) String status,
+      @JsonKey(name: MovieJsonKey.tagline) String? tagline,
+      @JsonKey(name: MovieJsonKey.title) String title,
+      @JsonKey(name: MovieJsonKey.video) bool video,
+      @JsonKey(name: MovieJsonKey.voteAverage) double voteAverage,
+      @JsonKey(name: MovieJsonKey.voteCount) int voteCount});
 
   @override
   $CollectionResponseCopyWith<$Res>? get belongsToCollection;
@@ -510,58 +468,37 @@ class __$$_MovieDetailsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieDetails extends _MovieDetails {
   const _$_MovieDetails(
-      {@JsonKey(name: MovieJsonKey.adult)
-          required this.adult,
-      @JsonKey(name: MovieJsonKey.backdropPath)
-          required this.backdropPath,
+      {@JsonKey(name: MovieJsonKey.adult) required this.adult,
+      @JsonKey(name: MovieJsonKey.backdropPath) required this.backdropPath,
       @JsonKey(name: MovieJsonKey.belongsToCollection)
-          required this.belongsToCollection,
-      @JsonKey(name: MovieJsonKey.budget)
-          required this.budget,
+      required this.belongsToCollection,
+      @JsonKey(name: MovieJsonKey.budget) required this.budget,
       @JsonKey(name: MovieJsonKey.genres)
-          required final List<MovieGenreResponse> genres,
-      @JsonKey(name: MovieJsonKey.homepage)
-          required this.homepage,
-      @JsonKey(name: MovieJsonKey.id)
-          required this.id,
-      @JsonKey(name: MovieJsonKey.imdbId)
-          required this.imdbId,
+      required final List<MovieGenreResponse> genres,
+      @JsonKey(name: MovieJsonKey.homepage) required this.homepage,
+      @JsonKey(name: MovieJsonKey.id) required this.id,
+      @JsonKey(name: MovieJsonKey.imdbId) required this.imdbId,
       @JsonKey(name: MovieJsonKey.originalLanguage)
-          required this.originalLanguage,
-      @JsonKey(name: MovieJsonKey.originalTitle)
-          required this.originalTitle,
-      @JsonKey(name: MovieJsonKey.overview)
-          required this.overview,
-      @JsonKey(name: MovieJsonKey.popularity)
-          required this.popularity,
-      @JsonKey(name: MovieJsonKey.posterPath)
-          required this.posterPath,
+      required this.originalLanguage,
+      @JsonKey(name: MovieJsonKey.originalTitle) required this.originalTitle,
+      @JsonKey(name: MovieJsonKey.overview) required this.overview,
+      @JsonKey(name: MovieJsonKey.popularity) required this.popularity,
+      @JsonKey(name: MovieJsonKey.posterPath) required this.posterPath,
       @JsonKey(name: MovieJsonKey.productionCompanies)
-          required final List<MovieProductionCompanyResponse>
-              productionCompanies,
+      required final List<MovieProductionCompanyResponse> productionCompanies,
       @JsonKey(name: MovieJsonKey.productionCountries)
-          required final List<MovieProductionCountryResponse>
-              productionCountries,
-      @JsonKey(name: MovieJsonKey.releaseDate)
-          required this.releaseDate,
-      @JsonKey(name: MovieJsonKey.revenue)
-          required this.revenue,
-      @JsonKey(name: MovieJsonKey.runtime)
-          required this.runtime,
+      required final List<MovieProductionCountryResponse> productionCountries,
+      @JsonKey(name: MovieJsonKey.releaseDate) required this.releaseDate,
+      @JsonKey(name: MovieJsonKey.revenue) required this.revenue,
+      @JsonKey(name: MovieJsonKey.runtime) required this.runtime,
       @JsonKey(name: MovieJsonKey.spokenLanguages)
-          required final List<MovieSpokenLanguageResponse> spokenLanguages,
-      @JsonKey(name: MovieJsonKey.status)
-          required this.status,
-      @JsonKey(name: MovieJsonKey.tagline)
-          required this.tagline,
-      @JsonKey(name: MovieJsonKey.title)
-          required this.title,
-      @JsonKey(name: MovieJsonKey.video)
-          required this.video,
-      @JsonKey(name: MovieJsonKey.voteAverage)
-          required this.voteAverage,
-      @JsonKey(name: MovieJsonKey.voteCount)
-          required this.voteCount})
+      required final List<MovieSpokenLanguageResponse> spokenLanguages,
+      @JsonKey(name: MovieJsonKey.status) required this.status,
+      @JsonKey(name: MovieJsonKey.tagline) required this.tagline,
+      @JsonKey(name: MovieJsonKey.title) required this.title,
+      @JsonKey(name: MovieJsonKey.video) required this.video,
+      @JsonKey(name: MovieJsonKey.voteAverage) required this.voteAverage,
+      @JsonKey(name: MovieJsonKey.voteCount) required this.voteCount})
       : _genres = genres,
         _productionCompanies = productionCompanies,
         _productionCountries = productionCountries,
@@ -771,58 +708,42 @@ class _$_MovieDetails extends _MovieDetails {
 
 abstract class _MovieDetails extends MovieDetailsResponse {
   const factory _MovieDetails(
-      {@JsonKey(name: MovieJsonKey.adult)
-          required final bool adult,
+      {@JsonKey(name: MovieJsonKey.adult) required final bool adult,
       @JsonKey(name: MovieJsonKey.backdropPath)
-          required final String? backdropPath,
+      required final String? backdropPath,
       @JsonKey(name: MovieJsonKey.belongsToCollection)
-          required final CollectionResponse? belongsToCollection,
-      @JsonKey(name: MovieJsonKey.budget)
-          required final int budget,
+      required final CollectionResponse? belongsToCollection,
+      @JsonKey(name: MovieJsonKey.budget) required final int budget,
       @JsonKey(name: MovieJsonKey.genres)
-          required final List<MovieGenreResponse> genres,
-      @JsonKey(name: MovieJsonKey.homepage)
-          required final String? homepage,
-      @JsonKey(name: MovieJsonKey.id)
-          required final int id,
-      @JsonKey(name: MovieJsonKey.imdbId)
-          required final String? imdbId,
+      required final List<MovieGenreResponse> genres,
+      @JsonKey(name: MovieJsonKey.homepage) required final String? homepage,
+      @JsonKey(name: MovieJsonKey.id) required final int id,
+      @JsonKey(name: MovieJsonKey.imdbId) required final String? imdbId,
       @JsonKey(name: MovieJsonKey.originalLanguage)
-          required final String originalLanguage,
+      required final String originalLanguage,
       @JsonKey(name: MovieJsonKey.originalTitle)
-          required final String originalTitle,
-      @JsonKey(name: MovieJsonKey.overview)
-          required final String? overview,
-      @JsonKey(name: MovieJsonKey.popularity)
-          required final double popularity,
-      @JsonKey(name: MovieJsonKey.posterPath)
-          required final String? posterPath,
+      required final String originalTitle,
+      @JsonKey(name: MovieJsonKey.overview) required final String? overview,
+      @JsonKey(name: MovieJsonKey.popularity) required final double popularity,
+      @JsonKey(name: MovieJsonKey.posterPath) required final String? posterPath,
       @JsonKey(name: MovieJsonKey.productionCompanies)
-          required final List<MovieProductionCompanyResponse>
-              productionCompanies,
+      required final List<MovieProductionCompanyResponse> productionCompanies,
       @JsonKey(name: MovieJsonKey.productionCountries)
-          required final List<MovieProductionCountryResponse>
-              productionCountries,
+      required final List<MovieProductionCountryResponse> productionCountries,
       @JsonKey(name: MovieJsonKey.releaseDate)
-          required final String releaseDate,
-      @JsonKey(name: MovieJsonKey.revenue)
-          required final int revenue,
-      @JsonKey(name: MovieJsonKey.runtime)
-          required final int? runtime,
+      required final String releaseDate,
+      @JsonKey(name: MovieJsonKey.revenue) required final int revenue,
+      @JsonKey(name: MovieJsonKey.runtime) required final int? runtime,
       @JsonKey(name: MovieJsonKey.spokenLanguages)
-          required final List<MovieSpokenLanguageResponse> spokenLanguages,
-      @JsonKey(name: MovieJsonKey.status)
-          required final String status,
-      @JsonKey(name: MovieJsonKey.tagline)
-          required final String? tagline,
-      @JsonKey(name: MovieJsonKey.title)
-          required final String title,
-      @JsonKey(name: MovieJsonKey.video)
-          required final bool video,
+      required final List<MovieSpokenLanguageResponse> spokenLanguages,
+      @JsonKey(name: MovieJsonKey.status) required final String status,
+      @JsonKey(name: MovieJsonKey.tagline) required final String? tagline,
+      @JsonKey(name: MovieJsonKey.title) required final String title,
+      @JsonKey(name: MovieJsonKey.video) required final bool video,
       @JsonKey(name: MovieJsonKey.voteAverage)
-          required final double voteAverage,
+      required final double voteAverage,
       @JsonKey(name: MovieJsonKey.voteCount)
-          required final int voteCount}) = _$_MovieDetails;
+      required final int voteCount}) = _$_MovieDetails;
   const _MovieDetails._() : super._();
 
   factory _MovieDetails.fromJson(Map<String, dynamic> json) =
@@ -1449,14 +1370,11 @@ class _$_MovieProductionCompany extends _MovieProductionCompany {
 
 abstract class _MovieProductionCompany extends MovieProductionCompanyResponse {
   const factory _MovieProductionCompany(
-      {@JsonKey(name: MovieJsonKey.id)
-          required final int id,
-      @JsonKey(name: MovieJsonKey.logoPath)
-          required final String? logoPath,
-      @JsonKey(name: MovieJsonKey.name)
-          required final String name,
+      {@JsonKey(name: MovieJsonKey.id) required final int id,
+      @JsonKey(name: MovieJsonKey.logoPath) required final String? logoPath,
+      @JsonKey(name: MovieJsonKey.name) required final String name,
       @JsonKey(name: MovieJsonKey.originCountry)
-          required final String originCountry}) = _$_MovieProductionCompany;
+      required final String originCountry}) = _$_MovieProductionCompany;
   const _MovieProductionCompany._() : super._();
 
   factory _MovieProductionCompany.fromJson(Map<String, dynamic> json) =
@@ -1846,14 +1764,11 @@ class _$_Collection extends _Collection {
 
 abstract class _Collection extends CollectionResponse {
   const factory _Collection(
-      {@JsonKey(name: MovieJsonKey.id)
-          required final int id,
-      @JsonKey(name: MovieJsonKey.name)
-          required final String name,
-      @JsonKey(name: MovieJsonKey.posterPath)
-          required final String? posterPath,
+      {@JsonKey(name: MovieJsonKey.id) required final int id,
+      @JsonKey(name: MovieJsonKey.name) required final String name,
+      @JsonKey(name: MovieJsonKey.posterPath) required final String? posterPath,
       @JsonKey(name: MovieJsonKey.backdropPath)
-          required final String? backdropPath}) = _$_Collection;
+      required final String? backdropPath}) = _$_Collection;
   const _Collection._() : super._();
 
   factory _Collection.fromJson(Map<String, dynamic> json) =

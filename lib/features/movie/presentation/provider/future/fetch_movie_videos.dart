@@ -1,8 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../domain/entity/movie_videos_entity.dart';
-import '../../../domain/usecase/fetch_movie_videos_usecase.dart';
-import '../injection/dependencies.dart';
+import '../../../../../lib.dart';
 
 part 'fetch_movie_videos.g.dart';
 

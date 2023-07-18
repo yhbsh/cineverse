@@ -6,7 +6,7 @@ part of 'fetch_movie_videos.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$fetchMovieVideosHash() => r'9960d8dcab1032848be1467d3e0a57e1d49e6180';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,13 +29,56 @@ class _SystemHash {
   }
 }
 
-String $fetchMovieVideosHash() => r'9960d8dcab1032848be1467d3e0a57e1d49e6180';
+typedef FetchMovieVideosRef = FutureProviderRef<MovieVideosEntity>;
+
+/// See also [fetchMovieVideos].
+@ProviderFor(fetchMovieVideos)
+const fetchMovieVideosProvider = FetchMovieVideosFamily();
+
+/// See also [fetchMovieVideos].
+class FetchMovieVideosFamily extends Family<AsyncValue<MovieVideosEntity>> {
+  /// See also [fetchMovieVideos].
+  const FetchMovieVideosFamily();
+
+  /// See also [fetchMovieVideos].
+  FetchMovieVideosProvider call({
+    required int id,
+  }) {
+    return FetchMovieVideosProvider(
+      id: id,
+    );
+  }
+
+  @override
+  FetchMovieVideosProvider getProviderOverride(
+    covariant FetchMovieVideosProvider provider,
+  ) {
+    return call(
+      id: provider.id,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchMovieVideosProvider';
+}
 
 /// See also [fetchMovieVideos].
 class FetchMovieVideosProvider extends FutureProvider<MovieVideosEntity> {
+  /// See also [fetchMovieVideos].
   FetchMovieVideosProvider({
     required this.id,
-  }) : super(
+  }) : super.internal(
           (ref) => fetchMovieVideos(
             ref,
             id: id,
@@ -45,7 +88,10 @@ class FetchMovieVideosProvider extends FutureProvider<MovieVideosEntity> {
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : $fetchMovieVideosHash,
+                  : _$fetchMovieVideosHash,
+          dependencies: FetchMovieVideosFamily._dependencies,
+          allTransitiveDependencies:
+              FetchMovieVideosFamily._allTransitiveDependencies,
         );
 
   final int id;
@@ -63,38 +109,4 @@ class FetchMovieVideosProvider extends FutureProvider<MovieVideosEntity> {
     return _SystemHash.finish(hash);
   }
 }
-
-typedef FetchMovieVideosRef = FutureProviderRef<MovieVideosEntity>;
-
-/// See also [fetchMovieVideos].
-final fetchMovieVideosProvider = FetchMovieVideosFamily();
-
-class FetchMovieVideosFamily extends Family<AsyncValue<MovieVideosEntity>> {
-  FetchMovieVideosFamily();
-
-  FetchMovieVideosProvider call({
-    required int id,
-  }) {
-    return FetchMovieVideosProvider(
-      id: id,
-    );
-  }
-
-  @override
-  FutureProvider<MovieVideosEntity> getProviderOverride(
-    covariant FetchMovieVideosProvider provider,
-  ) {
-    return call(
-      id: provider.id,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'fetchMovieVideosProvider';
-}
+// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

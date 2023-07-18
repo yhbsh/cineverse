@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../domain/entity/movie_videos_entity.dart';
-import 'movie_video_card.dart';
+import '../../../../../lib.dart';
 
 class MovieVideosGrid extends HookConsumerWidget {
   const MovieVideosGrid({super.key, required this.filteredVideos, required this.movieId});

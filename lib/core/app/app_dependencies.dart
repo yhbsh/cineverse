@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../data/network/network_info.dart';
+import '../../lib.dart';
 
 part 'app_dependencies.g.dart';
 

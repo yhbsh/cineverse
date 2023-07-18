@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../resource/app_route_const.dart';
+import '../../../lib.dart';
 
 final showBottomNavigationBarProvider = StateProvider<bool>((ref) => true);
 
@@ -28,8 +28,7 @@ class NavigationView extends HookConsumerWidget {
   }
 
   static int _currentIndex(BuildContext context) {
-    final router = GoRouter.of(context);
-    final location = router.location;
+    final location = GoRouterState.of(context).location;
 
     switch (location) {
       case AppRoutePath.movie:
@@ -45,7 +44,7 @@ class NavigationView extends HookConsumerWidget {
 
   static void _onTap(BuildContext context, int index) {
     final router = GoRouter.of(context);
-    final location = router.location;
+    final location = GoRouterState.of(context).location;
 
     switch (index) {
       case 0:

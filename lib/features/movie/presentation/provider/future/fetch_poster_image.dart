@@ -1,9 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../domain/entity/movie_failure.dart';
-import '../../../domain/usecase/fetch_poster_image_usecase.dart';
-import '../injection/dependencies.dart';
+import '../../../../../lib.dart';
 
 part 'fetch_poster_image.g.dart';
 

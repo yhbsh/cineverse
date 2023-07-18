@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/widget/circular_indicator.dart';
-import '../../../../favorite/presentation/provider/notifier/favorite_movies_notifier.dart';
-import '../../../domain/entity/movie_details_entity.dart';
+import '../../../../../lib.dart';
 
-class MovieDetailsAppBar extends HookConsumerWidget with PreferredSizeWidget {
+class MovieDetailsAppBar extends HookConsumerWidget implements PreferredSizeWidget {
   const MovieDetailsAppBar({Key? key, required this.movieDetails}) : super(key: key);
 
   final MovieDetailsEntity movieDetails;
@@ -25,7 +23,9 @@ class MovieDetailsAppBar extends HookConsumerWidget with PreferredSizeWidget {
               icon: Icon(isFavorite ? Icons.bookmark : Icons.bookmark_outline),
               onPressed: () {
                 if (!isFavorite) ref.read(favoriteMoviesNotifierProvider.notifier).addMovieToFavorite(movieDetails);
-                if (isFavorite) ref.read(favoriteMoviesNotifierProvider.notifier).removeMovieFromFavorite(movieDetails.id);
+                if (isFavorite) {
+                  ref.read(favoriteMoviesNotifierProvider.notifier).removeMovieFromFavorite(movieDetails.id);
+                }
               },
             );
           },

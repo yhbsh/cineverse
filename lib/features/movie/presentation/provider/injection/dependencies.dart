@@ -1,17 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../../core/app/app_dependencies.dart';
-import '../../../data/datasource/movie_remote_datasource.dart';
-import '../../../data/repository/movies_repository_implementation.dart';
-import '../../../domain/repository/movie_repository_interface.dart';
-import '../../../domain/usecase/fech_search_movies_usecase.dart';
-import '../../../domain/usecase/fetch_backdrop_image_usecase.dart';
-import '../../../domain/usecase/fetch_movie_credits_usecase.dart';
-import '../../../domain/usecase/fetch_movie_details_usecase.dart';
-import '../../../domain/usecase/fetch_movie_images_usecase.dart';
-import '../../../domain/usecase/fetch_movie_videos_usecase.dart';
-import '../../../domain/usecase/fetch_movies_usecase.dart';
-import '../../../domain/usecase/fetch_poster_image_usecase.dart';
+import '../../../../../lib.dart';
 
 part 'dependencies.g.dart';
 

@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../domain/entity/movie_details_entity.dart';
-import '../videos/movie_videos_column.dart';
-import 'movie_credits_list.dart';
-import 'movie_overview.dart';
-import 'titles_row.dart';
+import '../../../../../lib.dart';
 
 class MovieMoreDetailsColumn extends HookConsumerWidget {
   const MovieMoreDetailsColumn({super.key, required this.movieDetails});

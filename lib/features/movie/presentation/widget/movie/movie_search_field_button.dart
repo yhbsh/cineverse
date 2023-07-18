@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_route_const.dart';
+import '../../../../../lib.dart';
 
 class MovieSearchFieldButton extends HookConsumerWidget {
   const MovieSearchFieldButton({super.key});
@@ -19,9 +19,9 @@ class MovieSearchFieldButton extends HookConsumerWidget {
           title: TextField(
             enabled: false,
             cursorColor: Colors.white,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Search',
-              prefixIcon: Row(mainAxisSize: MainAxisSize.min, children: const [Icon(Icons.search), SizedBox(width: 8)]),
+              prefixIcon: Row(mainAxisSize: MainAxisSize.min, children: [Icon(Icons.search), SizedBox(width: 8)]),
             ),
             onTap: () => GoRouter.of(ref.context).goNamed(AppRouteName.search),
           ),

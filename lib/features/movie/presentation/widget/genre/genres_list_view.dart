@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../core/presentation/resource/app_const.dart';
-import 'genre_card.dart';
+import '../../../../../lib.dart';
 
 class GenresListView extends HookConsumerWidget {
   const GenresListView({super.key});

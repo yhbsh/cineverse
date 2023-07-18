@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../presentation/constant/movie_json_key.dart';
+import '../../../../../lib.dart';
 
 part 'movie_details_response.freezed.dart';
 part 'movie_details_response.g.dart';
@@ -63,7 +63,8 @@ class MovieSpokenLanguageResponse with _$MovieSpokenLanguageResponse {
 
   const MovieSpokenLanguageResponse._();
 
-  factory MovieSpokenLanguageResponse.fromJson(Map<String, dynamic> json) => _$MovieSpokenLanguageResponseFromJson(json);
+  factory MovieSpokenLanguageResponse.fromJson(Map<String, dynamic> json) =>
+      _$MovieSpokenLanguageResponseFromJson(json);
 }
 
 @freezed
@@ -77,7 +78,8 @@ class MovieProductionCompanyResponse with _$MovieProductionCompanyResponse {
 
   const MovieProductionCompanyResponse._();
 
-  factory MovieProductionCompanyResponse.fromJson(Map<String, dynamic> json) => _$MovieProductionCompanyResponseFromJson(json);
+  factory MovieProductionCompanyResponse.fromJson(Map<String, dynamic> json) =>
+      _$MovieProductionCompanyResponseFromJson(json);
 }
 
 @freezed
@@ -89,7 +91,8 @@ class MovieProductionCountryResponse with _$MovieProductionCountryResponse {
 
   const MovieProductionCountryResponse._();
 
-  factory MovieProductionCountryResponse.fromJson(Map<String, dynamic> json) => _$MovieProductionCountryResponseFromJson(json);
+  factory MovieProductionCountryResponse.fromJson(Map<String, dynamic> json) =>
+      _$MovieProductionCountryResponseFromJson(json);
 }
 
 @freezed

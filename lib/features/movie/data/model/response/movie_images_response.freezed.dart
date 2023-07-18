@@ -42,12 +42,11 @@ abstract class $MovieImagesResponseCopyWith<$Res> {
       _$MovieImagesResponseCopyWithImpl<$Res, MovieImagesResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: MovieImagesJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieImagesJsonKey.id) int id,
       @JsonKey(name: MovieImagesJsonKey.backdrops)
-          List<MovieImageBackdropResponse> backdrops,
+      List<MovieImageBackdropResponse> backdrops,
       @JsonKey(name: MovieImagesJsonKey.posters)
-          List<MovieImagePosterResponse> posters});
+      List<MovieImagePosterResponse> posters});
 }
 
 /// @nodoc
@@ -93,12 +92,11 @@ abstract class _$$_MovieImagesResponseCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: MovieImagesJsonKey.id)
-          int id,
+      {@JsonKey(name: MovieImagesJsonKey.id) int id,
       @JsonKey(name: MovieImagesJsonKey.backdrops)
-          List<MovieImageBackdropResponse> backdrops,
+      List<MovieImageBackdropResponse> backdrops,
       @JsonKey(name: MovieImagesJsonKey.posters)
-          List<MovieImagePosterResponse> posters});
+      List<MovieImagePosterResponse> posters});
 }
 
 /// @nodoc
@@ -137,12 +135,11 @@ class __$$_MovieImagesResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieImagesResponse extends _MovieImagesResponse {
   const _$_MovieImagesResponse(
-      {@JsonKey(name: MovieImagesJsonKey.id)
-          required this.id,
+      {@JsonKey(name: MovieImagesJsonKey.id) required this.id,
       @JsonKey(name: MovieImagesJsonKey.backdrops)
-          required final List<MovieImageBackdropResponse> backdrops,
+      required final List<MovieImageBackdropResponse> backdrops,
       @JsonKey(name: MovieImagesJsonKey.posters)
-          required final List<MovieImagePosterResponse> posters})
+      required final List<MovieImagePosterResponse> posters})
       : _backdrops = backdrops,
         _posters = posters,
         super._();
@@ -212,12 +209,11 @@ class _$_MovieImagesResponse extends _MovieImagesResponse {
 
 abstract class _MovieImagesResponse extends MovieImagesResponse {
   const factory _MovieImagesResponse(
-          {@JsonKey(name: MovieImagesJsonKey.id)
-              required final int id,
+          {@JsonKey(name: MovieImagesJsonKey.id) required final int id,
           @JsonKey(name: MovieImagesJsonKey.backdrops)
-              required final List<MovieImageBackdropResponse> backdrops,
+          required final List<MovieImageBackdropResponse> backdrops,
           @JsonKey(name: MovieImagesJsonKey.posters)
-              required final List<MovieImagePosterResponse> posters}) =
+          required final List<MovieImagePosterResponse> posters}) =
       _$_MovieImagesResponse;
   const _MovieImagesResponse._() : super._();
 
@@ -496,19 +492,16 @@ class _$_MovieImageBackdropResponse extends _MovieImageBackdropResponse {
 abstract class _MovieImageBackdropResponse extends MovieImageBackdropResponse {
   const factory _MovieImageBackdropResponse(
       {@JsonKey(name: MovieImagesJsonKey.filePath)
-          required final String filePath,
+      required final String filePath,
       @JsonKey(name: MovieImagesJsonKey.aspectRatio)
-          required final double aspectRatio,
-      @JsonKey(name: MovieImagesJsonKey.iso6391)
-          required final String? iso6391,
-      @JsonKey(name: MovieImagesJsonKey.width)
-          required final int width,
-      @JsonKey(name: MovieImagesJsonKey.height)
-          required final int height,
+      required final double aspectRatio,
+      @JsonKey(name: MovieImagesJsonKey.iso6391) required final String? iso6391,
+      @JsonKey(name: MovieImagesJsonKey.width) required final int width,
+      @JsonKey(name: MovieImagesJsonKey.height) required final int height,
       @JsonKey(name: MovieImagesJsonKey.voteAverage)
-          required final double voteAverage,
+      required final double voteAverage,
       @JsonKey(name: MovieImagesJsonKey.voteCount)
-          required final int voteCount}) = _$_MovieImageBackdropResponse;
+      required final int voteCount}) = _$_MovieImageBackdropResponse;
   const _MovieImageBackdropResponse._() : super._();
 
   factory _MovieImageBackdropResponse.fromJson(Map<String, dynamic> json) =
@@ -796,19 +789,16 @@ class _$_MovieImagePosterResponse extends _MovieImagePosterResponse {
 abstract class _MovieImagePosterResponse extends MovieImagePosterResponse {
   const factory _MovieImagePosterResponse(
       {@JsonKey(name: MovieImagesJsonKey.filePath)
-          required final String filePath,
+      required final String filePath,
       @JsonKey(name: MovieImagesJsonKey.aspectRatio)
-          required final double aspectRatio,
-      @JsonKey(name: MovieImagesJsonKey.iso6391)
-          required final String? iso6391,
-      @JsonKey(name: MovieImagesJsonKey.width)
-          required final int width,
-      @JsonKey(name: MovieImagesJsonKey.height)
-          required final int height,
+      required final double aspectRatio,
+      @JsonKey(name: MovieImagesJsonKey.iso6391) required final String? iso6391,
+      @JsonKey(name: MovieImagesJsonKey.width) required final int width,
+      @JsonKey(name: MovieImagesJsonKey.height) required final int height,
       @JsonKey(name: MovieImagesJsonKey.voteAverage)
-          required final double voteAverage,
+      required final double voteAverage,
       @JsonKey(name: MovieImagesJsonKey.voteCount)
-          required final int voteCount}) = _$_MovieImagePosterResponse;
+      required final int voteCount}) = _$_MovieImagePosterResponse;
   const _MovieImagePosterResponse._() : super._();
 
   factory _MovieImagePosterResponse.fromJson(Map<String, dynamic> json) =

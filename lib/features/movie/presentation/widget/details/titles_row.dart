@@ -20,7 +20,8 @@ class TitlesRow extends HookConsumerWidget {
             child: Column(
               children: [
                 SizedBox(height: size.height * 0.05),
-                Text(titles[index], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                Text(titles[index],
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
                 SizedBox(height: size.height * 0.02),
                 if (selectedIndexNotifier.value == index)
                   Container(

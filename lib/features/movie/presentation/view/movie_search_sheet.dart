@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/presentation/provider/stream/network_provider.dart';
-import '../../../../core/presentation/resource/app_color.dart';
-import '../../../../core/presentation/view/no_internet_connection.dart';
-import '../../../../core/presentation/widget/circular_indicator.dart';
-import '../provider/state/query_provider.dart';
-import '../widget/movie/search_movies_list_view.dart';
+import '../../../../lib.dart';
 
 class MovieSearchSheet extends HookConsumerWidget {
   const MovieSearchSheet({super.key});
@@ -50,7 +45,7 @@ class MovieSearchSheet extends HookConsumerWidget {
           SizedBox(width: 12),
         ],
       ),
-      body: Column(children: const [SearchMoviesListView()]),
+      body: const Column(children: [SearchMoviesListView()]),
     );
   }
 }

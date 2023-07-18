@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../presentation/constant/movie_json_key.dart';
-import 'movie_details_response.dart';
+import '../../../../../lib.dart';
 
 part 'movies_genres_response.freezed.dart';
 part 'movies_genres_response.g.dart';
@@ -10,7 +9,8 @@ part 'movies_genres_response.g.dart';
 
 @freezed
 class MoviesGenresResponse with _$MoviesGenresResponse {
-  const factory MoviesGenresResponse({@JsonKey(name: MovieJsonKey.genres) required List<MovieGenreResponse> genres}) = _MoviesGenresResponse;
+  const factory MoviesGenresResponse({@JsonKey(name: MovieJsonKey.genres) required List<MovieGenreResponse> genres}) =
+      _MoviesGenresResponse;
 
   factory MoviesGenresResponse.fromJson(Map<String, dynamic> json) => _$MoviesGenresResponseFromJson(json);
 }

@@ -1,10 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../../../core/domain/base/usecase/base_usecase.dart';
-import '../../data/model/request/fetch_poster_image_request.dart';
-import '../entity/movie_failure.dart';
-import '../repository/movie_repository_interface.dart';
+import '../../../../lib.dart';
 
 @immutable
 class FetchPosterImageUseCase extends BaseUseCase<FetchPosterImageUseCaseInput, Uint8List, MovieFailure> {

@@ -1,87 +1,36 @@
-name: movies_app_okoul
-description: Movies App Okoul
+name: okoul_movies_app
+description: Movies Listing App For A Challenge at okoul.com
 
 publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.5 <3.0.0"
+  sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
-  # Ui
   carousel_slider: ^4.2.1
-
-  # Network
-  connectivity_plus: ^3.0.2
-  cupertino_icons: ^1.0.2
-
-  # Error Handling
+  connectivity_plus: ^4.0.1
   dartz: ^0.10.1
-  dio: ^4.0.6
+  dio: ^5.2.1+1
   flutter:
     sdk: flutter
-
-  # State Management
-  flutter_hooks: ^0.18.5+1
-  font_awesome_flutter: ^10.3.0
-
-  # Data Modeling
+  flutter_hooks: ^0.18.6
   freezed_annotation: ^2.2.0
-
-  # Navigation
-  go_router: ^5.2.4
-  google_fonts: ^3.0.1
-  hooks_riverpod: ^2.1.1
-  json_annotation: ^4.7.0
-  riverpod_annotation: ^1.0.6
-
-  # Storage and Cache
-  shared_preferences: ^2.0.15
+  go_router: ^9.0.3
+  google_fonts: ^5.1.0
+  hooks_riverpod: ^2.3.6
+  json_annotation: ^4.8.1
+  riverpod_annotation: ^2.1.1
+  shared_preferences: ^2.2.0
   youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
-  # Sdk
-  flutter_test:
-    sdk: flutter
-  # Linting and Formatting
-  flutter_lints: ^2.0.0
-
-  # Code Generator
-  build_runner: ^2.3.2
-
-  # Data Modeling Generator
-  freezed: ^2.3.2
-  # Data Serialization Generator
-  json_serializable: ^6.5.4
-  # State Management Generator
-  riverpod_generator: ^1.0.6
-
-  # App Icon Generator
-  flutter_launcher_icons: ^0.11.0
-
-flutter_icons:
-  #  image_path: "assets/images/icon-128x128.png"
-  image_path_android: "assets/images/app-icon.png"
-  image_path_ios: "assets/images/app-icon.png"
-  android: true # can specify file name here e.g. "ic_launcher"
-  ios: true # can specify file name here e.g. "My-Launcher-Icon"
-  # adaptive_icon_background: "assets/images/christmas-background.png" # only available for Android 8.0 devices and above
-  # adaptive_icon_foreground: "assets/images/icon-foreground-432x432.png" # only available for Android 8.0 devices and above
-  min_sdk_android: 21 # android min sdk min:16, default 21
-  remove_alpha_ios: true
-  web:
-    generate: true
-    image_path: "assets/images/app-icon.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
-  windows:
-    generate: true
-    image_path: "assets/images/app-icon.png"
-    icon_size: 48 # min:48, max:256, default: 48
-  macos:
-    generate: true
-    image_path: "assets/images/app-icon.png"
+  build_runner: ^2.4.6
+  flutter_lints: ^2.0.2
+  freezed: ^2.3.5
+  json_serializable: ^6.7.1
+  riverpod_generator: ^2.2.3
 
 flutter:
   uses-material-design: true

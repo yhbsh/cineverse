@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../core/presentation/provider/stream/network_provider.dart';
-import '../../../../core/presentation/view/no_internet_connection.dart';
-import '../../../../core/presentation/widget/circular_indicator.dart';
-import '../constant/movies_enum.dart';
-import '../widget/all_movies/all_movies_grid.dart';
+import '../../../../lib.dart';
 
 class AllMoviesView extends HookConsumerWidget {
   const AllMoviesView({super.key, required this.type});

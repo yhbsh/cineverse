@@ -22,18 +22,13 @@ class NetworkInfoImpl implements INetworkInfo {
 }
 
 bool _getConnectionStateFromResult(ConnectivityResult event) {
-  switch (event) {
-    case ConnectivityResult.none:
-      return false;
-    case ConnectivityResult.mobile:
-      return false;
-    case ConnectivityResult.wifi:
-      return true;
-    case ConnectivityResult.bluetooth:
-      return false;
-    case ConnectivityResult.ethernet:
-      return true;
-    case ConnectivityResult.vpn:
-      return false;
-  }
+  return switch (event) {
+    ConnectivityResult.none => false,
+    ConnectivityResult.mobile => false,
+    ConnectivityResult.wifi => true,
+    ConnectivityResult.bluetooth => false,
+    ConnectivityResult.ethernet => true,
+    ConnectivityResult.vpn => false,
+    _ => false,
+  };
 }

@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../movie/domain/entity/movie_details_entity.dart';
-import '../../domain/entity/favorite_exception.dart';
-import '../../presentation/resource/favorite_const.dart';
+import '../../../../lib.dart';
 
 @immutable
 abstract class IFavoriteLocalDataSource {
@@ -45,7 +43,8 @@ class FavoriteLocalDataSource implements IFavoriteLocalDataSource {
 
       if (favoriteMovies.any((movie) => MovieDetailsEntity.fromJson(json.decode(movie)).id == movieEntity.id)) return;
 
-      _localStorage.setStringList(FavoriteConst.favoriteLocalStorageKey, [...favoriteMovies, json.encode(movieEntity.toJson())]);
+      _localStorage
+          .setStringList(FavoriteConst.favoriteLocalStorageKey, [...favoriteMovies, json.encode(movieEntity.toJson())]);
     } catch (storageErr) {
       throw const FavoriteException(message: 'Error while saving movie to favorite');
     }

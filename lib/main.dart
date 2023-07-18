@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'core/app/app.dart';
-import 'core/app/app_dependencies.dart';
+import 'lib.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +14,9 @@ Future<void> main() async {
 
   runApp(
     ProviderScope(
-      overrides: [sharedPrefsProvider.overrideWithValue(await SharedPreferences.getInstance())],
-      // observers: [ProviderLogger()],
+      overrides: [
+        sharedPrefsProvider.overrideWithValue(await SharedPreferences.getInstance()),
+      ],
       child: const MoviesApp(),
     ),
   );
