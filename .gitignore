@@ -56,3 +56,5 @@ app.*.map.json
 **/*.g.dart
 **/*.freezed.dart
 
+
+.vscode/
