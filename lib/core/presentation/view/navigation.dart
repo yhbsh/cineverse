@@ -28,7 +28,7 @@ class NavigationView extends HookConsumerWidget {
   }
 
   static int _currentIndex(BuildContext context) {
-    final location = GoRouterState.of(context).location;
+    final location = GoRouterState.of(context).fullPath;
 
     switch (location) {
       case AppRoutePath.movie:
@@ -44,7 +44,7 @@ class NavigationView extends HookConsumerWidget {
 
   static void _onTap(BuildContext context, int index) {
     final router = GoRouter.of(context);
-    final location = GoRouterState.of(context).location;
+    final location = GoRouterState.of(context).uri.toString();
 
     switch (index) {
       case 0:

@@ -30,8 +30,6 @@ class _SystemHash {
   }
 }
 
-typedef FetchBackdropImageRef = FutureProviderRef<Uint8List>;
-
 /// See also [fetchBackdropImage].
 @ProviderFor(fetchBackdropImage)
 const fetchBackdropImageProvider = FetchBackdropImageFamily();
@@ -78,10 +76,10 @@ class FetchBackdropImageFamily extends Family<AsyncValue<Uint8List>> {
 class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
   /// See also [fetchBackdropImage].
   FetchBackdropImageProvider({
-    required this.backdropPath,
-  }) : super.internal(
+    required String? backdropPath,
+  }) : this._internal(
           (ref) => fetchBackdropImage(
-            ref,
+            ref as FetchBackdropImageRef,
             backdropPath: backdropPath,
           ),
           from: fetchBackdropImageProvider,
@@ -93,9 +91,43 @@ class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
           dependencies: FetchBackdropImageFamily._dependencies,
           allTransitiveDependencies:
               FetchBackdropImageFamily._allTransitiveDependencies,
+          backdropPath: backdropPath,
         );
 
+  FetchBackdropImageProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.backdropPath,
+  }) : super.internal();
+
   final String? backdropPath;
+
+  @override
+  Override overrideWith(
+    FutureOr<Uint8List> Function(FetchBackdropImageRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchBackdropImageProvider._internal(
+        (ref) => create(ref as FetchBackdropImageRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        backdropPath: backdropPath,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<Uint8List> createElement() {
+    return _FetchBackdropImageProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -111,4 +143,19 @@ class FetchBackdropImageProvider extends FutureProvider<Uint8List> {
     return _SystemHash.finish(hash);
   }
 }
-// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
+
+mixin FetchBackdropImageRef on FutureProviderRef<Uint8List> {
+  /// The parameter `backdropPath` of this provider.
+  String? get backdropPath;
+}
+
+class _FetchBackdropImageProviderElement
+    extends FutureProviderElement<Uint8List> with FetchBackdropImageRef {
+  _FetchBackdropImageProviderElement(super.provider);
+
+  @override
+  String? get backdropPath =>
+      (origin as FetchBackdropImageProvider).backdropPath;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member

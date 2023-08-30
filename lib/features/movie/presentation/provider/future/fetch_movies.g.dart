@@ -29,8 +29,6 @@ class _SystemHash {
   }
 }
 
-typedef FetchMoviesRef = FutureProviderRef<MoviesEntity>;
-
 /// See also [fetchMovies].
 @ProviderFor(fetchMovies)
 const fetchMoviesProvider = FetchMoviesFamily();
@@ -83,12 +81,12 @@ class FetchMoviesFamily extends Family<AsyncValue<MoviesEntity>> {
 class FetchMoviesProvider extends FutureProvider<MoviesEntity> {
   /// See also [fetchMovies].
   FetchMoviesProvider({
-    required this.type,
-    required this.page,
-    required this.genre,
-  }) : super.internal(
+    required MoviesType type,
+    required int page,
+    required MovieGenreEntity genre,
+  }) : this._internal(
           (ref) => fetchMovies(
-            ref,
+            ref as FetchMoviesRef,
             type: type,
             page: page,
             genre: genre,
@@ -102,11 +100,51 @@ class FetchMoviesProvider extends FutureProvider<MoviesEntity> {
           dependencies: FetchMoviesFamily._dependencies,
           allTransitiveDependencies:
               FetchMoviesFamily._allTransitiveDependencies,
+          type: type,
+          page: page,
+          genre: genre,
         );
+
+  FetchMoviesProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.type,
+    required this.page,
+    required this.genre,
+  }) : super.internal();
 
   final MoviesType type;
   final int page;
   final MovieGenreEntity genre;
+
+  @override
+  Override overrideWith(
+    FutureOr<MoviesEntity> Function(FetchMoviesRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchMoviesProvider._internal(
+        (ref) => create(ref as FetchMoviesRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        type: type,
+        page: page,
+        genre: genre,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<MoviesEntity> createElement() {
+    return _FetchMoviesProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -126,4 +164,28 @@ class FetchMoviesProvider extends FutureProvider<MoviesEntity> {
     return _SystemHash.finish(hash);
   }
 }
-// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
+
+mixin FetchMoviesRef on FutureProviderRef<MoviesEntity> {
+  /// The parameter `type` of this provider.
+  MoviesType get type;
+
+  /// The parameter `page` of this provider.
+  int get page;
+
+  /// The parameter `genre` of this provider.
+  MovieGenreEntity get genre;
+}
+
+class _FetchMoviesProviderElement extends FutureProviderElement<MoviesEntity>
+    with FetchMoviesRef {
+  _FetchMoviesProviderElement(super.provider);
+
+  @override
+  MoviesType get type => (origin as FetchMoviesProvider).type;
+  @override
+  int get page => (origin as FetchMoviesProvider).page;
+  @override
+  MovieGenreEntity get genre => (origin as FetchMoviesProvider).genre;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member

@@ -29,8 +29,6 @@ class _SystemHash {
   }
 }
 
-typedef SearchMoviesRef = FutureProviderRef<MoviesEntity>;
-
 /// See also [searchMovies].
 @ProviderFor(searchMovies)
 const searchMoviesProvider = SearchMoviesFamily();
@@ -83,12 +81,12 @@ class SearchMoviesFamily extends Family<AsyncValue<MoviesEntity>> {
 class SearchMoviesProvider extends FutureProvider<MoviesEntity> {
   /// See also [searchMovies].
   SearchMoviesProvider({
-    required this.query,
-    required this.page,
-    this.includeAdult = false,
-  }) : super.internal(
+    required String query,
+    required int page,
+    bool includeAdult = false,
+  }) : this._internal(
           (ref) => searchMovies(
-            ref,
+            ref as SearchMoviesRef,
             query: query,
             page: page,
             includeAdult: includeAdult,
@@ -102,11 +100,51 @@ class SearchMoviesProvider extends FutureProvider<MoviesEntity> {
           dependencies: SearchMoviesFamily._dependencies,
           allTransitiveDependencies:
               SearchMoviesFamily._allTransitiveDependencies,
+          query: query,
+          page: page,
+          includeAdult: includeAdult,
         );
+
+  SearchMoviesProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.query,
+    required this.page,
+    required this.includeAdult,
+  }) : super.internal();
 
   final String query;
   final int page;
   final bool includeAdult;
+
+  @override
+  Override overrideWith(
+    FutureOr<MoviesEntity> Function(SearchMoviesRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: SearchMoviesProvider._internal(
+        (ref) => create(ref as SearchMoviesRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        query: query,
+        page: page,
+        includeAdult: includeAdult,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<MoviesEntity> createElement() {
+    return _SearchMoviesProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -126,4 +164,28 @@ class SearchMoviesProvider extends FutureProvider<MoviesEntity> {
     return _SystemHash.finish(hash);
   }
 }
-// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
+
+mixin SearchMoviesRef on FutureProviderRef<MoviesEntity> {
+  /// The parameter `query` of this provider.
+  String get query;
+
+  /// The parameter `page` of this provider.
+  int get page;
+
+  /// The parameter `includeAdult` of this provider.
+  bool get includeAdult;
+}
+
+class _SearchMoviesProviderElement extends FutureProviderElement<MoviesEntity>
+    with SearchMoviesRef {
+  _SearchMoviesProviderElement(super.provider);
+
+  @override
+  String get query => (origin as SearchMoviesProvider).query;
+  @override
+  int get page => (origin as SearchMoviesProvider).page;
+  @override
+  bool get includeAdult => (origin as SearchMoviesProvider).includeAdult;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member

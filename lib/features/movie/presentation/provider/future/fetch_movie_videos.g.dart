@@ -29,8 +29,6 @@ class _SystemHash {
   }
 }
 
-typedef FetchMovieVideosRef = FutureProviderRef<MovieVideosEntity>;
-
 /// See also [fetchMovieVideos].
 @ProviderFor(fetchMovieVideos)
 const fetchMovieVideosProvider = FetchMovieVideosFamily();
@@ -77,10 +75,10 @@ class FetchMovieVideosFamily extends Family<AsyncValue<MovieVideosEntity>> {
 class FetchMovieVideosProvider extends FutureProvider<MovieVideosEntity> {
   /// See also [fetchMovieVideos].
   FetchMovieVideosProvider({
-    required this.id,
-  }) : super.internal(
+    required int id,
+  }) : this._internal(
           (ref) => fetchMovieVideos(
-            ref,
+            ref as FetchMovieVideosRef,
             id: id,
           ),
           from: fetchMovieVideosProvider,
@@ -92,9 +90,43 @@ class FetchMovieVideosProvider extends FutureProvider<MovieVideosEntity> {
           dependencies: FetchMovieVideosFamily._dependencies,
           allTransitiveDependencies:
               FetchMovieVideosFamily._allTransitiveDependencies,
+          id: id,
         );
 
+  FetchMovieVideosProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.id,
+  }) : super.internal();
+
   final int id;
+
+  @override
+  Override overrideWith(
+    FutureOr<MovieVideosEntity> Function(FetchMovieVideosRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchMovieVideosProvider._internal(
+        (ref) => create(ref as FetchMovieVideosRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        id: id,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<MovieVideosEntity> createElement() {
+    return _FetchMovieVideosProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -109,4 +141,18 @@ class FetchMovieVideosProvider extends FutureProvider<MovieVideosEntity> {
     return _SystemHash.finish(hash);
   }
 }
-// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
+
+mixin FetchMovieVideosRef on FutureProviderRef<MovieVideosEntity> {
+  /// The parameter `id` of this provider.
+  int get id;
+}
+
+class _FetchMovieVideosProviderElement
+    extends FutureProviderElement<MovieVideosEntity> with FetchMovieVideosRef {
+  _FetchMovieVideosProviderElement(super.provider);
+
+  @override
+  int get id => (origin as FetchMovieVideosProvider).id;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member

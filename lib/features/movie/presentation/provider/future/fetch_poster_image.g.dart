@@ -29,8 +29,6 @@ class _SystemHash {
   }
 }
 
-typedef FetchPosterImageRef = FutureProviderRef<Uint8List>;
-
 /// See also [fetchPosterImage].
 @ProviderFor(fetchPosterImage)
 const fetchPosterImageProvider = FetchPosterImageFamily();
@@ -77,10 +75,10 @@ class FetchPosterImageFamily extends Family<AsyncValue<Uint8List>> {
 class FetchPosterImageProvider extends FutureProvider<Uint8List> {
   /// See also [fetchPosterImage].
   FetchPosterImageProvider({
-    required this.posterPath,
-  }) : super.internal(
+    required String? posterPath,
+  }) : this._internal(
           (ref) => fetchPosterImage(
-            ref,
+            ref as FetchPosterImageRef,
             posterPath: posterPath,
           ),
           from: fetchPosterImageProvider,
@@ -92,9 +90,43 @@ class FetchPosterImageProvider extends FutureProvider<Uint8List> {
           dependencies: FetchPosterImageFamily._dependencies,
           allTransitiveDependencies:
               FetchPosterImageFamily._allTransitiveDependencies,
+          posterPath: posterPath,
         );
 
+  FetchPosterImageProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.posterPath,
+  }) : super.internal();
+
   final String? posterPath;
+
+  @override
+  Override overrideWith(
+    FutureOr<Uint8List> Function(FetchPosterImageRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchPosterImageProvider._internal(
+        (ref) => create(ref as FetchPosterImageRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        posterPath: posterPath,
+      ),
+    );
+  }
+
+  @override
+  FutureProviderElement<Uint8List> createElement() {
+    return _FetchPosterImageProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -109,4 +141,18 @@ class FetchPosterImageProvider extends FutureProvider<Uint8List> {
     return _SystemHash.finish(hash);
   }
 }
-// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
+
+mixin FetchPosterImageRef on FutureProviderRef<Uint8List> {
+  /// The parameter `posterPath` of this provider.
+  String? get posterPath;
+}
+
+class _FetchPosterImageProviderElement extends FutureProviderElement<Uint8List>
+    with FetchPosterImageRef {
+  _FetchPosterImageProviderElement(super.provider);
+
+  @override
+  String? get posterPath => (origin as FetchPosterImageProvider).posterPath;
+}
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member
