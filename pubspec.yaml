@@ -1,12 +1,11 @@
 name: okoul_movies_app
 description: Movies Listing App For A Challenge at okoul.com
 
-publish_to: "none"
-
-version: 1.0.0+1
+version: 1.0.1
 
 environment:
-  sdk: ">=3.1.0 <4.0.0"
+  sdk: 3.1.5
+  flutter: 3.13.9
 
 dependencies:
   carousel_slider: ^4.2.1
