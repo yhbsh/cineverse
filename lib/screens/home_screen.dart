@@ -32,23 +32,26 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(title: const Text("Movies")),
-      body: Column(
-        children: [
-          const SizedBox(height: 12),
-          SizedBox(
-            width: size.width - 24,
-            child: const TextField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Search...',
+      body: switch (controller.value) {
+        MoviesStateLoading() => const Center(child: CircularProgressIndicator.adaptive()),
+        MoviesStateLoaded(movies: final movies) => Column(
+            children: [
+              const SizedBox(height: 12),
+              SizedBox(
+                width: size.width - 24,
+                child: TextField(
+                  decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    hintText: 'Search...',
+                  ),
+                  onTap: () {
+                    showSearch(context: context, delegate: MoviesSearchDelegate(initialMovies: movies));
+                  },
+                ),
               ),
-            ),
-          ),
-          const SizedBox(height: 12),
-          Expanded(
-            child: switch (controller.value) {
-              MoviesStateLoading() => const Center(child: CircularProgressIndicator.adaptive()),
-              MoviesStateLoaded(movies: final movies) => RefreshIndicator.adaptive(
+              const SizedBox(height: 12),
+              Expanded(
+                child: RefreshIndicator.adaptive(
                   onRefresh: controller.fetchMovies,
                   child: GridView.builder(
                     padding: const EdgeInsets.all(12),
@@ -65,13 +68,73 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-            },
+              ),
+            ],
           ),
-        ],
-      ),
+      },
       floatingActionButton: FloatingActionButton(
         onPressed: () => controller.fetchMovies(),
         child: const Icon(Icons.home),
+      ),
+    );
+  }
+}
+
+class MoviesSearchDelegate extends SearchDelegate<Movie> {
+  final Iterable<Movie> initialMovies;
+
+  MoviesSearchDelegate({required this.initialMovies});
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        onPressed: () {},
+        icon: const Icon(Icons.search),
+      ),
+    ];
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return const BackButton();
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    final movies = initialMovies.where((movie) => movie.name.contains(query));
+    return RefreshIndicator.adaptive(
+      onRefresh: () async {},
+      child: ListView.separated(
+        separatorBuilder: (context, index) => const Divider(),
+        itemCount: movies.length,
+        itemBuilder: (context, index) {
+          final movie = movies.elementAt(index);
+
+          return ListTile(
+            leading: CircleAvatar(backgroundImage: NetworkImage(movie.posterURL)),
+            title: Text(movie.name, maxLines: 2),
+          );
+        },
+      ),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    return RefreshIndicator.adaptive(
+      onRefresh: () async {},
+      child: ListView.separated(
+        separatorBuilder: (context, index) => const Divider(),
+        itemCount: initialMovies.length,
+        itemBuilder: (context, index) {
+          final movie = initialMovies.elementAt(index);
+
+          return ListTile(
+            leading: CircleAvatar(backgroundImage: NetworkImage(movie.posterURL)),
+            title: Text(movie.name, maxLines: 2),
+          );
+        },
       ),
     );
   }
