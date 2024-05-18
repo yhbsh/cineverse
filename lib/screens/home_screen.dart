@@ -56,12 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onRefresh: controller.fetchMovies,
                   child: GridView.builder(
                     padding: const EdgeInsets.all(12),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 0.6,
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 18,
-                      crossAxisSpacing: 18,
-                    ),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(childAspectRatio: 0.6, crossAxisCount: 2, mainAxisSpacing: 18, crossAxisSpacing: 18),
                     itemCount: movies.length,
                     itemBuilder: (context, index) {
                       final movie = movies.elementAt(index);
