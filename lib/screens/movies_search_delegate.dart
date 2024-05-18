@@ -1,6 +1,5 @@
+import 'package:cineverse/entities/movie.dart';
 import 'package:flutter/material.dart';
-
-import '../controllers/movies_controller.dart';
 
 class MoviesSearchDelegate extends SearchDelegate<Movie> {
   final List<Movie> initialMovies;

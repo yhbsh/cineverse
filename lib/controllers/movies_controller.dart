@@ -1,21 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
-final class Movie {
-  final int id;
-  final String name;
-  final String posterURL;
-
-  const Movie({required this.id, required this.name, required this.posterURL});
-
-  factory Movie.fromJson(Map<String, dynamic> json) {
-    return Movie(
-      id: json['id'],
-      name: json['overview'],
-      posterURL: "https://image.tmdb.org/t/p/w500${json['poster_path']}",
-    );
-  }
-}
+import '../entities/movie.dart';
 
 sealed class MoviesState {
   const MoviesState();

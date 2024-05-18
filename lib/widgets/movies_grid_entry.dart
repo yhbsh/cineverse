@@ -1,6 +1,6 @@
+import 'package:cineverse/entities/movie.dart';
 import 'package:flutter/material.dart';
 
-import '../controllers/movies_controller.dart';
 import '../screens/movie_screen.dart';
 
 class MoviesGridEntry extends StatelessWidget {
@@ -14,7 +14,7 @@ class MoviesGridEntry extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => const MovieScreen(),
+            builder: (context) => MovieScreen(id: movie.id),
           ),
         );
       },
