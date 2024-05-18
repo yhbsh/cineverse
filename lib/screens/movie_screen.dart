@@ -38,22 +38,54 @@ class _MovieScreenState extends State<MovieScreen> {
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
-                expandedHeight: size.height * 0.2,
+                expandedHeight: size.height * 0.30,
                 stretch: true,
                 flexibleSpace: FlexibleSpaceBar(
-                  background: Image.network(
-                    movie.backdropURL,
-                    fit: BoxFit.cover,
-                    color: Colors.black12,
-                    colorBlendMode: BlendMode.srcOver,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
+                  background: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Positioned.fill(
+                        bottom: size.height * 0.05,
+                        child: Image.network(
+                          movie.backdropURL,
+                          fit: BoxFit.cover,
+                          color: Colors.black12,
+                          colorBlendMode: BlendMode.srcOver,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
 
-                      return const Align(child: CircularProgressIndicator.adaptive());
-                    },
+                            return const Align(child: CircularProgressIndicator.adaptive());
+                          },
+                        ),
+                      ),
+                      Positioned(
+                        height: size.height * 0.10,
+                        width: size.height * 0.10 * (9 / 16),
+                        left: size.width * 0.05,
+                        bottom: 0,
+                        child: Image.network(
+                          movie.posterURL,
+                          fit: BoxFit.cover,
+                          color: Colors.black12,
+                          colorBlendMode: BlendMode.srcOver,
+                          loadingBuilder: (context, child, progress) {
+                            if (progress == null) return child;
+
+                            return const Align(child: CircularProgressIndicator.adaptive());
+                          },
+                          frameBuilder: (context, child, _, __) {
+                            return ClipRRect(
+                              borderRadius: const BorderRadius.all(Radius.circular(4)),
+                              child: child,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+              const SliverFillRemaining(),
             ],
           ),
         );
