@@ -1,7 +1,7 @@
-import 'package:cineverse/screens/movie_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../controllers/movies_controller.dart';
+import '../screens/movie_screen.dart';
 
 class MoviesGridEntry extends StatelessWidget {
   const MoviesGridEntry({super.key, required this.movie});
