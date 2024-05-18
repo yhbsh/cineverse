@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../controllers/movies_controller.dart';
 import '../widgets/movies_grid_entry.dart';
+import 'movies_search_delegate.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     hintText: 'Search...',
                   ),
                   onTap: () {
-                    showSearch(context: context, delegate: MoviesSearchDelegate(initialMovies: movies));
+                    showSearch(context: context, delegate: MoviesSearchDelegate(initialMovies: movies.toList()));
                   },
                 ),
               ),
@@ -75,66 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => controller.fetchMovies(),
         child: const Icon(Icons.home),
-      ),
-    );
-  }
-}
-
-class MoviesSearchDelegate extends SearchDelegate<Movie> {
-  final Iterable<Movie> initialMovies;
-
-  MoviesSearchDelegate({required this.initialMovies});
-
-  @override
-  List<Widget>? buildActions(BuildContext context) {
-    return [
-      IconButton(
-        onPressed: () {},
-        icon: const Icon(Icons.search),
-      ),
-    ];
-  }
-
-  @override
-  Widget? buildLeading(BuildContext context) {
-    return const BackButton();
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    final movies = initialMovies.where((movie) => movie.name.contains(query));
-    return RefreshIndicator.adaptive(
-      onRefresh: () async {},
-      child: ListView.separated(
-        separatorBuilder: (context, index) => const Divider(),
-        itemCount: movies.length,
-        itemBuilder: (context, index) {
-          final movie = movies.elementAt(index);
-
-          return ListTile(
-            leading: CircleAvatar(backgroundImage: NetworkImage(movie.posterURL)),
-            title: Text(movie.name, maxLines: 2),
-          );
-        },
-      ),
-    );
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return RefreshIndicator.adaptive(
-      onRefresh: () async {},
-      child: ListView.separated(
-        separatorBuilder: (context, index) => const Divider(),
-        itemCount: initialMovies.length,
-        itemBuilder: (context, index) {
-          final movie = initialMovies.elementAt(index);
-
-          return ListTile(
-            leading: CircleAvatar(backgroundImage: NetworkImage(movie.posterURL)),
-            title: Text(movie.name, maxLines: 2),
-          );
-        },
       ),
     );
   }
