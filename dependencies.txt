@@ -1,2 +1,0 @@
-carousel_slider, connectivity_plus, dartz, dio, flutter_hooks, freezed_annotation, go_router, google_fonts, hooks_riverpod, json_annotation, riverpod_annotation, shared_preferences, youtube_player_flutter
-build_runner, flutter_lints, freezed, json_serializable, riverpod_generator
