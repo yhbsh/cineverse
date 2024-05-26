@@ -41,12 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 width: size.width - 24,
                 child: TextField(
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.search),
-                    hintText: 'Search...',
-                  ),
+                  onTapOutside: (_) => FocusScope.of(context).unfocus(),
+                  autofocus: false,
+                  decoration: const InputDecoration(prefixIcon: Icon(Icons.search), hintText: 'Search...'),
                   onTap: () {
-                    showSearch(context: context, delegate: MoviesSearchDelegate(initialMovies: movies.toList()));
+                    showSearch(
+                      context: context,
+                      useRootNavigator: false,
+                      delegate: MoviesSearchDelegate(initialMovies: movies.toList()),
+                    );
                   },
                 ),
               ),
@@ -68,10 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
       },
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => controller.fetchMovies(),
-        child: const Icon(Icons.refresh),
-      ),
     );
   }
 }

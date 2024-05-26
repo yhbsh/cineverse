@@ -1,6 +1,6 @@
-import 'package:cineverse/entities/movie.dart';
 import 'package:flutter/material.dart';
 
+import '../entities/movie.dart';
 import '../screens/movie_screen.dart';
 
 class MoviesGridEntry extends StatelessWidget {
