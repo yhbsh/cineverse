@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
@@ -24,15 +26,19 @@ class MoviesController extends ValueNotifier<MoviesState> {
   MoviesController() : super(const MoviesStateLoading());
 
   Future<void> fetchMovies() async {
-    value = const MoviesStateLoading();
+    final movies = await Isolate.run<Iterable<Movie>>(
+      () async {
+        final dio = Dio();
+        final response = await dio.get(
+          "$_baseURL/now_playing?language=en-US&page=",
+          options: Options(headers: {"Authorization": "Bearer $token", "Accept": "application/json"}),
+        );
 
-    final dio = Dio();
-    final response = await dio.get(
-      "$_baseURL/now_playing?language=en-US&page=",
-      options: Options(headers: {"Authorization": "Bearer $token", "Accept": "application/json"}),
+        final results = response.data['results'] as List;
+        return results.map((json) => Movie.fromJson(json));
+      },
     );
 
-    final results = response.data['results'] as List;
-    value = MoviesStateLoaded(movies: results.map((json) => Movie.fromJson(json)));
+    value = MoviesStateLoaded(movies: movies);
   }
 }
