@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/movie_controller.dart';
 
@@ -33,7 +34,6 @@ class _MovieScreenState extends State<MovieScreen> {
     switch (controller.value) {
       case MovieStateLoading():
         return const Center(child: CircularProgressIndicator.adaptive());
-
       case MovieStateLoaded(movie: final movie):
         return Scaffold(
           body: RefreshIndicator.adaptive(
@@ -47,8 +47,10 @@ class _MovieScreenState extends State<MovieScreen> {
                     stretch: true,
                     actions: [
                       IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.bookmark),
+                        onPressed: () {
+                          if (movie.pageURL case Uri url) launchUrl(url);
+                        },
+                        icon: const Icon(Icons.link),
                       ),
                     ],
                     flexibleSpace: FlexibleSpaceBar(

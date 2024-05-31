@@ -9,6 +9,7 @@ dependencies:
   dio: ^5.4.3
   flutter:
     sdk: flutter
+  url_launcher: ^6.2.6
 
 dev_dependencies:
   flutter_lints: ^4.0.0
