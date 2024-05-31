@@ -4,7 +4,7 @@ final class Movie {
   final String overview;
   final String posterURL;
   final String backdropURL;
-  final String pageURL;
+  final String? pageURL;
 
   const Movie({
     required this.id,
@@ -22,7 +22,7 @@ final class Movie {
       overview: json['overview']!,
       posterURL: "https://image.tmdb.org/t/p/w500${json['poster_path']!}",
       backdropURL: "https://image.tmdb.org/t/p/w500${json['backdrop_path']!}",
-      pageURL: json['homepage']!,
+      pageURL: json['homepage'],
     );
   }
 }
